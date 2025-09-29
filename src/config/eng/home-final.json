@@ -1,0 +1,107 @@
+{
+  "hero": {
+    "title": "Premium Indian Spices for Global Markets",
+    "subtitle": "Experience the authentic flavors of India with our carefully sourced, high-quality spices that bring the taste of tradition to your table.",
+    "backgroundImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070&auto=format&fit=crop",
+    "cta": {
+      "text": "Explore Our Products",
+      "href": "/products"
+    }
+  },
+  "sections": {
+    "services": {
+      "title": "Our Services",
+      "subtitle": "Comprehensive spice trading solutions tailored to your business needs",
+      "items": [
+        {
+          "icon": "local_shipping",
+          "title": "Global Shipping",
+          "description": "Worldwide delivery with temperature-controlled containers to maintain spice quality"
+        },
+        {
+          "icon": "verified",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing and certification to ensure premium quality standards"
+        },
+        {
+          "icon": "support_agent",
+          "title": "Expert Consultation",
+          "description": "Professional guidance on spice selection and market trends"
+        }
+      ]
+    },
+    "whyChooseUs": {
+      "title": "Why Choose SD Overseas?",
+      "subtitle": "Your trusted partner in the global spice trade",
+      "items": [
+        {
+          "icon": "agriculture",
+          "title": "Direct Farm Sourcing",
+          "description": "Direct partnerships with farmers ensure fresh, authentic spices"
+        },
+        {
+          "icon": "trending_up",
+          "title": "Competitive Pricing",
+          "description": "Best market rates with transparent pricing and no hidden costs"
+        },
+        {
+          "icon": "handshake",
+          "title": "Reliable Partnership",
+          "description": "Long-term relationships built on trust, quality, and timely delivery"
+        }
+      ]
+    },
+    "featuredProducts": {
+      "title": "Featured Products",
+      "subtitle": "Discover our most popular and premium spice selections",
+      "items": [
+        {
+          "name": "Premium Turmeric",
+          "description": "Golden turmeric with exceptional curcumin content",
+          "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+          "name": "Whole Cardamom",
+          "description": "Aromatic green cardamom pods for authentic flavor",
+          "image": "https://images.unsplash.com/photo-1609501676725-7186f3a1f2ed?q=80&w=2070&auto=format&fit=crop"
+        },
+        {
+          "name": "Cumin Seeds",
+          "description": "Premium cumin seeds with rich, earthy aroma",
+          "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=2070&auto=format&fit=crop"
+        }
+      ],
+      "cta": {
+        "text": "View All Products",
+        "href": "/products"
+      }
+    },
+    "testimonials": {
+      "title": "Client Testimonials",
+      "subtitle": "What our partners say about working with us",
+      "items": [
+        {
+          "name": "Rajesh Kumar",
+          "date": "December 2023",
+          "rating": 5,
+          "comment": "Exceptional quality spices and reliable delivery. SD Overseas has been our trusted partner for over 3 years.",
+          "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=150&auto=format&fit=crop"
+        },
+        {
+          "name": "Maria Schmidt",
+          "date": "November 2023",
+          "rating": 5,
+          "comment": "The quality of their spices is outstanding. Perfect for our restaurant chain across Europe.",
+          "image": "https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=150&auto=format&fit=crop"
+        },
+        {
+          "name": "Ahmed Hassan",
+          "date": "October 2023",
+          "rating": 5,
+          "comment": "Professional service and competitive pricing. Highly recommended for bulk spice imports.",
+          "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&auto=format&fit=crop"
+        }
+      ]
+    }
+  }
+}
