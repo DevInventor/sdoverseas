@@ -165,17 +165,17 @@ export const Services: React.FC = () => {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-1">
+            <div className="flex flex-col md:flex-row items-stretch gap-3 md:gap-1">
               {serviceProcessSteps.map((process, index) => (
                 <React.Fragment key={index}>
                   <Card 
-                    className={`text-center p-4 flex-1 ${
+                    className={`text-center p-4 flex-1 flex flex-col ${
                       index % 2 === 0 
                         ? 'bg-primary/5 dark:bg-primary/10' 
                         : 'bg-secondary/5 dark:bg-secondary/10'
                     }`}
                   >
-                    <CardContent className="py-2">
+                    <CardContent className="py-2 flex flex-col h-full">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 ${
                         process.status === 'completed' ? 'bg-green-100 dark:bg-green-900/20 text-green-600' :
                         process.status === 'current' ? 'bg-primary/10 dark:bg-primary/20 text-primary' :
@@ -186,7 +186,7 @@ export const Services: React.FC = () => {
                       <h3 className="text-sm font-bold text-text-light dark:text-text-dark mb-2">
                         {process.title}
                       </h3>
-                      <p className="text-xs text-subtle-light dark:text-subtle-dark leading-tight">
+                      <p className="text-xs text-subtle-light dark:text-subtle-dark leading-tight flex-grow">
                         {process.description}
                       </p>
                     </CardContent>

@@ -108,12 +108,24 @@ export const Products: React.FC = () => {
                   </div>
                 </div>
                 <div className="p-4 flex-grow flex flex-col">
-                  <h3 className="text-text-light dark:text-text-dark text-base font-bold leading-tight mb-1">
+                  <h3 className="text-text-light dark:text-text-dark text-base font-bold leading-tight mb-2">
                     {product.name}
                   </h3>
-                  <p className="text-subtle-light dark:text-subtle-dark text-sm font-normal flex-grow">
+                  <p className="text-subtle-light dark:text-subtle-dark text-sm font-normal flex-grow mb-3">
                     {product.description}
                   </p>
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    className="w-full text-xs font-medium border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-200"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      navigate(`/products/${product.id}`);
+                      scrollToTop();
+                    }}
+                  >
+                    Learn More
+                  </Button>
                 </div>
               </div>
             ))}
