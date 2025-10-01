@@ -1,9 +1,9 @@
 {
-  "name": "SD-Overseas",
+  "name": "sdoverseas",
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://devinventor.github.io/SD-Overseas",
+  "homepage": "https://devinventor.github.io/sdoverseas",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
