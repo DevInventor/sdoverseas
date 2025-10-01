@@ -1,10 +1,10 @@
 import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Icon } from '../components/common';
+import { Icon, ProductCard } from '../components/common';
 import AnimatedTestimonials from '../components/ui/AnimatedTestimonials';
 import Preloader from '../components/ui/Preloader';
-import { getTestimonials } from '../config';
+import { getTestimonials, getProducts } from '../config';
 
 export const HomeFinal: React.FC = () => {
   const { t } = useLanguage();
@@ -18,6 +18,9 @@ export const HomeFinal: React.FC = () => {
     role: testimonial.title,
     company: testimonial.company
   }));
+
+  // Get featured products data
+  const featuredProducts = getProducts().slice(0, 3);
 
   const handlePreloaderComplete = useCallback(() => {
     setShowPreloader(false);
@@ -122,23 +125,12 @@ export const HomeFinal: React.FC = () => {
             {t('home-final.sections.featuredProducts.subtitle')}
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[0, 1, 2].map((index: number) => (
-              <div key={index} className="group">
-                <div className="w-full aspect-square rounded-lg overflow-hidden">
-                  <div 
-                    className="w-full h-full bg-center bg-cover transition-transform duration-300 group-hover:scale-110"
-                    style={{ backgroundImage: `url("${t(`home-final.sections.featuredProducts.items.${index}.image`)}")` }}
-                  />
-                </div>
-                <div className="mt-4">
-                  <h3 className="text-lg font-semibold text-slate-900 dark:text-white">
-                    {t(`home-final.sections.featuredProducts.items.${index}.name`)}
-                  </h3>
-                  <p className="text-slate-600 dark:text-slate-400">
-                    {t(`home-final.sections.featuredProducts.items.${index}.description`)}
-                  </p>
-                </div>
-              </div>
+            {featuredProducts.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={product}
+                showLearnMore={true}
+              />
             ))}
           </div>
           <div className="text-center mt-12">

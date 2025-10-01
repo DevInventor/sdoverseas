@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { PageContainer } from '../components/layout/PageContainer';
 import { 
   Card, 
@@ -10,11 +9,9 @@ import {
   ProductCard
 } from '../components/common';
 import { SPICE_PRODUCTS } from '../constants';
-import { scrollToTop } from '../hooks/useScrollToTop';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export const Products: React.FC = () => {
-  const navigate = useNavigate();
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [displayedProducts, setDisplayedProducts] = useState(8); // Show 8 products initially

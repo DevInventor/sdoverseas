@@ -7,7 +7,6 @@ export {
   CardHeader, 
   CardContent, 
   CardFooter, 
-  ProductCard, 
   ServiceCard, 
   TestimonialCard 
 } from './Card';
