@@ -6,7 +6,8 @@ import {
   CardContent, 
   Button, 
   Icon,
-  ResponsiveGrid
+  ResponsiveGrid,
+  ProductCard
 } from '../components/common';
 import { SPICE_PRODUCTS } from '../constants';
 import { scrollToTop } from '../hooks/useScrollToTop';
@@ -88,46 +89,11 @@ export const Products: React.FC = () => {
         <section className="mb-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
             {displayedProductsList.map((product) => (
-              <div
+              <ProductCard
                 key={product.id}
-                className="group flex flex-col bg-background-light dark:bg-background-dark rounded-lg overflow-hidden border border-text-light/10 dark:border-text-dark/10 transition-all duration-300 hover:shadow-xl hover:-translate-y-1 cursor-pointer"
-                onClick={() => {
-                  navigate(`/products/${product.id}`);
-                  scrollToTop();
-                }}
-              >
-                <div className="relative">
-                  <div 
-                    className="w-full bg-center bg-no-repeat aspect-square bg-cover"
-                    style={{ backgroundImage: `url("${product.image}")` }}
-                  />
-                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <button className="rounded-full bg-primary text-white px-4 py-2 text-sm font-bold">
-                      {t('products.viewDetails')}
-                    </button>
-                  </div>
-                </div>
-                <div className="p-4 flex-grow flex flex-col">
-                  <h3 className="text-text-light dark:text-text-dark text-base font-bold leading-tight mb-2">
-                    {product.name}
-                  </h3>
-                  <p className="text-subtle-light dark:text-subtle-dark text-sm font-normal flex-grow mb-3">
-                    {product.description}
-                  </p>
-                  <Button
-                    variant="outline"
-                    size="sm"
-                    className="w-full text-xs font-medium border-primary/30 text-primary hover:bg-primary hover:text-white transition-all duration-200"
-                    onClick={(e) => {
-                      e.stopPropagation();
-                      navigate(`/products/${product.id}`);
-                      scrollToTop();
-                    }}
-                  >
-                    Learn More
-                  </Button>
-                </div>
-              </div>
+                product={product}
+                showLearnMore={true}
+              />
             ))}
           </div>
 

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getProducts } from '../config';
-import { Button } from '../components/common';
+import { Button, ProductCard } from '../components/common';
 import { Input, Textarea } from '../components/forms';
 import { PageContainer } from '../components/layout/PageContainer';
 import { scrollToTop } from '../hooks/useScrollToTop';
@@ -215,27 +215,16 @@ export const ProductDetail: React.FC = () => {
             {t('product-detail.relatedProducts.title')}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {products.slice(0, 3).map((relatedProduct) => (
-              <Link 
-                key={relatedProduct.id} 
-                to={`/products/${relatedProduct.id}`} 
-                className="group"
-                onClick={scrollToTop}
-              >
-                <div className="aspect-video w-full overflow-hidden rounded-lg mb-4">
-                  <div 
-                    className="h-full w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-300"
-                    style={{ backgroundImage: `url("${relatedProduct.image}")` }}
-                  />
-                </div>
-                <h4 className="text-base font-bold font-display text-text-light dark:text-text-dark">
-                  {relatedProduct.name}
-                </h4>
-                <p className="text-sm text-text-light/60 dark:text-text-dark/60">
-                  {relatedProduct.description}
-                </p>
-              </Link>
-            ))}
+            {products
+              .filter(relatedProduct => relatedProduct.id !== product.id)
+              .slice(0, 3)
+              .map((relatedProduct) => (
+                <ProductCard
+                  key={relatedProduct.id}
+                  product={relatedProduct}
+                  showLearnMore={true}
+                />
+              ))}
           </div>
         </div>
       </PageContainer>

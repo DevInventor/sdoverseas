@@ -85,3 +85,6 @@ export {
 
 // Search Components
 export { SearchDropdown } from './SearchDropdown';
+
+// Product Components
+export { ProductCard } from './ProductCard';
