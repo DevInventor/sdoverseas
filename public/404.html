@@ -168,6 +168,24 @@
             font-weight: 500;
         }
         
+        .countdown-container {
+            margin-bottom: 1.5rem;
+        }
+        
+        .countdown-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .countdown-text span {
+            color: #fbbf24;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-shadow: 0 0 10px rgba(251, 191, 36, 0.5);
+        }
+        
         .spinner-container {
             display: flex;
             align-items: center;
@@ -201,13 +219,8 @@
             height: 100%;
             background: linear-gradient(90deg, #ffffff 0%, #f1f5f9 100%);
             border-radius: 2px;
-            animation: progress 2s ease-in-out infinite;
-        }
-        
-        @keyframes progress {
-            0% { width: 0%; }
-            50% { width: 70%; }
-            100% { width: 100%; }
+            width: 0%;
+            transition: width 1s ease-in-out;
         }
         
         .features {
@@ -283,12 +296,15 @@
         
         <div class="loading-container">
             <div class="loading-text">Please wait while we redirect you</div>
+            <div class="countdown-container">
+                <div class="countdown-text">Redirecting in <span id="countdown">5</span> seconds</div>
+            </div>
             <div class="spinner-container">
                 <div class="spinner"></div>
                 <span>Loading...</span>
             </div>
             <div class="progress-bar">
-                <div class="progress-fill"></div>
+                <div class="progress-fill" id="progressFill"></div>
             </div>
         </div>
         
@@ -321,13 +337,28 @@
                 sessionStorage.removeItem('redirect');
                 history.replaceState(null, null, redirect);
             } else {
-                var path = window.location.pathname;
-                var base = '/sdoverseas'; // Replace with your repo name
-                if (path.startsWith(base)) {
-                    path = path.substring(base.length);
-                }
-                sessionStorage.setItem('redirect', base + path);
-                window.location.replace(base + '/404.html');
+                // Start countdown and redirect after 5 seconds
+                var countdown = 5;
+                var countdownElement = document.getElementById('countdown');
+                var progressFill = document.getElementById('progressFill');
+                
+                // Update countdown and progress bar
+                var countdownInterval = setInterval(function() {
+                    countdown--;
+                    countdownElement.textContent = countdown;
+                    
+                    // Update progress bar (0% to 100% over 5 seconds)
+                    var progress = ((5 - countdown) / 5) * 100;
+                    progressFill.style.width = progress + '%';
+                    
+                    if (countdown <= 0) {
+                        clearInterval(countdownInterval);
+                        
+                        // Redirect to root path
+                        var base = '/sdoverseas';
+                        window.location.href = base + '/';
+                    }
+                }, 1000);
             }
         })();
     </script>
