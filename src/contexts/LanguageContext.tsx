@@ -5,7 +5,7 @@ export type Language = 'eng' | 'ger';
 interface LanguageContextType {
   language: Language;
   setLanguage: (language: Language) => void;
-  t: (key: string, fallback?: string) => string;
+  t: (key: string, fallback?: string) => any;
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -84,7 +84,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
   };
 
   // Translation function
-  const t = (key: string, fallback?: string): string => {
+  const t = (key: string, fallback?: any): any => {
     const keys = key.split('.');
     let value = translations;
     
@@ -96,7 +96,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
       }
     }
     
-    return typeof value === 'string' ? value : (fallback || key);
+    return value !== undefined ? value : (fallback || key);
   };
 
   const value = {

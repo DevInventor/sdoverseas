@@ -9,71 +9,11 @@ import {
   Icon,
   FloatingActionButton
 } from '../components/common';
-import { SERVICES_DATA } from '../constants';
 import { scrollToTop } from '../hooks/useScrollToTop';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export const Services: React.FC = () => {
-  const serviceProcessSteps = [
-    {
-      step: 1,
-      title: 'Consultation',
-      description: 'We understand your needs and requirements',
-      icon: 'support_agent',
-      status: 'completed'
-    },
-    {
-      step: 2,
-      title: 'Sourcing',
-      description: 'Direct sourcing from trusted farms',
-      icon: 'agriculture',
-      status: 'completed'
-    },
-    {
-      step: 3,
-      title: 'Quality Check',
-      description: 'Rigorous testing and quality assurance',
-      icon: 'verified',
-      status: 'current'
-    },
-    {
-      step: 4,
-      title: 'Packaging',
-      description: 'Secure packaging for long-distance shipping',
-      icon: 'inventory_2',
-      status: 'upcoming'
-    },
-    {
-      step: 5,
-      title: 'Delivery',
-      description: 'Safe and timely delivery to your doorstep',
-      icon: 'local_shipping',
-      status: 'upcoming'
-    }
-  ];
-
-  const testimonials = [
-    {
-      name: "Marcus Johnson",
-      role: "Chef",
-      restaurant: "Spice Garden Bistro",
-      rating: 5,
-      comment: "SD Overseas has transformed our kitchen operations with their consistent quality and excellent logistics."
-    },
-    {
-      name: "Emily Chen",
-      role: "Import Manager",
-      company: "Global Food Distributors",
-      rating: 5,
-      comment: "Working with SD Overseas has significantly improved our supply chain efficiency."
-    },
-    {
-      name: "Ahmed Hassan",
-      role: "Owner",
-      restaurant: "Middle Eastern Delights",
-      rating: 5,
-      comment: "The authenticity and freshness of spices from SD Overseas is unmatched."
-    }
-  ];
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark">
@@ -83,21 +23,20 @@ export const Services: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl font-bold text-text-light dark:text-text-dark mb-6">
-                Comprehensive Spice Trading Services
+                {t('services.hero.title')}
               </h1>
               <p className="text-xl text-subtle-light dark:text-subtle-dark mb-8 leading-relaxed">
-                From sourcing to delivery, we provide end-to-end solutions for your spice trading needs. 
-                Our comprehensive services ensure quality, compliance, and customer satisfaction.
+                {t('services.hero.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/contact" onClick={scrollToTop}>
+                <Link to={t('services.cta.primaryButton.href')} onClick={scrollToTop}>
                   <Button variant="primary" size="lg">
-                    Get Started Today
+                    {t('services.cta.primaryButton.text')}
                   </Button>
                 </Link>
-                <Link to="/contact" onClick={scrollToTop}>
+                <Link to={t('services.cta.secondaryButton.href')} onClick={scrollToTop}>
                   <Button variant="outline" size="lg">
-                    View Pricing
+                    {t('services.cta.secondaryButton.text')}
                   </Button>
                 </Link>
               </div>
@@ -116,10 +55,10 @@ export const Services: React.FC = () => {
         <section className="py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4">
-              Our Core Services
+              {t('services.services.title')}
             </h2>
             <p className="text-subtle-light dark:text-subtle-dark max-w-2xl mx-auto">
-              Everything you need for successful spice trading operations
+              {t('services.services.subtitle')}
             </p>
           </div>
 
@@ -127,7 +66,7 @@ export const Services: React.FC = () => {
             columns={{ xs: 1, md: 2, lg: 3 }}
             gap="lg"
           >
-            {SERVICES_DATA.map((service, index) => (
+            {t('services.services.items').map((service: any, index: number) => (
               <Card 
                 key={index} 
                 className={`p-6 hover:shadow-xl transition-all transform hover:-translate-y-2 ${
@@ -163,16 +102,16 @@ export const Services: React.FC = () => {
         <section className="py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4">
-              Our Service Process
+              {t('services.process.title')}
             </h2>
             <p className="text-subtle-light dark:text-subtle-dark max-w-2xl mx-auto">
-              A streamlined process ensures efficiency and quality at every step
+              {t('services.process.subtitle')}
             </p>
           </div>
 
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-stretch gap-3 md:gap-1">
-              {serviceProcessSteps.map((process, index) => (
+              {t('services.process.steps').map((process: any, index: number) => (
                 <React.Fragment key={index}>
                   <Card 
                     className={`text-center p-4 flex-1 flex flex-col ${
@@ -199,7 +138,7 @@ export const Services: React.FC = () => {
                   </Card>
                   
                   {/* Arrow between cards */}
-                  {index < serviceProcessSteps.length - 1 && (
+                  {index < t('services.process.steps').length - 1 && (
                     <div className="hidden md:flex items-center justify-center text-primary/50 dark:text-primary/30 px-1">
                       <Icon name="arrow_forward" size="md" />
                     </div>
@@ -215,10 +154,10 @@ export const Services: React.FC = () => {
         <section className="py-16">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4">
-              Client Success Stories
+              {t('services.testimonials.title')}
             </h2>
             <p className="text-subtle-light dark:text-subtle-dark max-w-2xl mx-auto">
-              See how we've helped businesses worldwide with their spice trading needs
+              {t('services.testimonials.subtitle')}
             </p>
           </div>
 
@@ -226,7 +165,7 @@ export const Services: React.FC = () => {
             columns={{ xs: 1, md: 2, lg: 3 }}
             gap="lg"
           >
-            {testimonials.map((testimonial, index) => (
+            {t('services.testimonials.items').map((testimonial: any, index: number) => (
               <Card 
                 key={index} 
                 className={`p-6 ${
@@ -253,7 +192,7 @@ export const Services: React.FC = () => {
                         {testimonial.name}
                       </h4>
                       <p className="text-sm text-subtle-light dark:text-subtle-dark">
-                        {testimonial.role}, {testimonial.restaurant || testimonial.company}
+                        {testimonial.company}
                       </p>
                     </div>
                   </div>
@@ -268,21 +207,20 @@ export const Services: React.FC = () => {
           <Card className="text-center p-12 bg-primary/5 dark:bg-primary/10">
             <CardContent>
               <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4">
-                Ready to Enhance Your Spice Business?
+                {t('services.cta.title')}
               </h2>
               <p className="text-subtle-light dark:text-subtle-dark mb-8 max-w-2xl mx-auto">
-                Let SD Overseas be your trusted partner in the global spice trade. 
-                Contact us today to discuss your requirements and start your journey with us.
+                {t('services.cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link to="/contact" onClick={scrollToTop}>
+                <Link to={t('services.cta.primaryButton.href')} onClick={scrollToTop}>
                   <Button variant="primary" size="lg">
-                    Request Quote
+                    {t('services.cta.primaryButton.text')}
                   </Button>
                 </Link>
-                <Link to="/contact" onClick={scrollToTop}>
+                <Link to={t('services.cta.secondaryButton.href')} onClick={scrollToTop}>
                   <Button variant="outline" size="lg">
-                    Schedule Consultation
+                    {t('services.cta.secondaryButton.text')}
                   </Button>
                 </Link>
               </div>
