@@ -134,9 +134,8 @@ export function WorldMap({
                 <motion.circle
                   r="4"
                   fill={lineColor}
-                  initial={{ offsetDistance: "0%", opacity: 0 }}
+                  initial={{ opacity: 0 }}
                   animate={{
-                    offsetDistance: [null, "0%", "100%", "100%", "100%"],
                     opacity: [0, 0, 1, 0, 0],
                   }}
                   transition={{
@@ -148,6 +147,7 @@ export function WorldMap({
                   }}
                   style={{
                     offsetPath: `path('${createCurvedPath(startPoint, endPoint)}')`,
+                    offsetDistance: "0%",
                   }}
                 />
               )}

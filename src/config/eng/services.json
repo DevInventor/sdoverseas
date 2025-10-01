@@ -1,7 +1,9 @@
 {
   "hero": {
     "title": "Our Services",
-    "subtitle": "Comprehensive spice trading solutions tailored to meet your business requirements and exceed your expectations."
+    "subtitle": "Comprehensive spice trading solutions tailored to meet your business requirements and exceed your expectations.",
+    "image": "/sdoverseas/service-hero.png",
+    "imageAlt": "SD Overseas comprehensive spice trading services - from cultivation to global delivery"
   },
   "services": {
     "title": "Our Core Services",

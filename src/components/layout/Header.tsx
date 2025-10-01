@@ -199,16 +199,6 @@ export const Header: React.FC<HeaderProps> = ({ className = '' }) => {
                   {item.name}
                 </Link>
               ))}
-              {/* Additional Mobile Links */}
-              <div className="px-3 py-2 border-t border-gray-200 dark:border-gray-700">
-                <Link
-                  to="/demo"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  className="block text-sm text-gray-600 dark:text-gray-300 hover:text-primary"
-                >
-                  Component Demo
-                </Link>
-              </div>
               
               <div className="flex items-center justify-between px-3 py-2">
                 <Link

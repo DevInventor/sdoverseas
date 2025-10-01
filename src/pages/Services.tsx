@@ -11,16 +11,31 @@ import {
 } from '../components/common';
 import { scrollToTop } from '../hooks/useScrollToTop';
 import { useLanguage } from '../contexts/LanguageContext';
+import { SERVICES_DATA } from '../constants';
 
 export const Services: React.FC = () => {
   const { t } = useLanguage();
+
+  // Check if translations are loaded
+  const isTranslationsLoaded = t('services.services.title') !== 'services.services.title';
+
+  if (!isTranslationsLoaded) {
+    return (
+      <div className="min-h-screen bg-background-light dark:bg-background-dark flex items-center justify-center">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-subtle-light dark:text-subtle-dark">Loading...</p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-background-light dark:bg-background-dark">
       <PageContainer>
         {/* Hero Section */}
         <section className="py-16 sm:py-24">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[500px]">
             <div>
               <h1 className="text-4xl font-bold text-text-light dark:text-text-dark mb-6">
                 {t('services.hero.title')}
@@ -41,12 +56,14 @@ export const Services: React.FC = () => {
                 </Link>
               </div>
             </div>
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1587302912306-cf1ed9c33146?q=80&w=2070&auto=format&fit=crop"
-                alt="Spice warehouse operations"
-                className="w-full h-80 object-cover rounded-xl shadow-lg"
-              />
+            <div className="relative flex items-center justify-center">
+              <div className="w-full max-w-lg">
+                <img
+                  src={t('services.hero.image')}
+                  alt={t('services.hero.imageAlt')}
+                  className="w-full h-auto object-contain rounded-xl shadow-lg bg-white/5 dark:bg-white/5 p-4 border border-primary/10"
+                />
+              </div>
             </div>
           </div>
         </section>
@@ -66,7 +83,7 @@ export const Services: React.FC = () => {
             columns={{ xs: 1, md: 2, lg: 3 }}
             gap="lg"
           >
-            {t('services.services.items').map((service: any, index: number) => (
+            {SERVICES_DATA.map((service: any, index: number) => (
               <Card 
                 key={index} 
                 className={`p-6 hover:shadow-xl transition-all transform hover:-translate-y-2 ${
@@ -111,7 +128,7 @@ export const Services: React.FC = () => {
 
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col md:flex-row items-stretch gap-3 md:gap-1">
-              {t('services.process.steps').map((process: any, index: number) => (
+              {(t('services.process.steps') || []).map((process: any, index: number) => (
                 <React.Fragment key={index}>
                   <Card 
                     className={`text-center p-4 flex-1 flex flex-col ${
@@ -138,7 +155,7 @@ export const Services: React.FC = () => {
                   </Card>
                   
                   {/* Arrow between cards */}
-                  {index < t('services.process.steps').length - 1 && (
+                  {index < (t('services.process.steps') || []).length - 1 && (
                     <div className="hidden md:flex items-center justify-center text-primary/50 dark:text-primary/30 px-1">
                       <Icon name="arrow_forward" size="md" />
                     </div>
@@ -165,7 +182,7 @@ export const Services: React.FC = () => {
             columns={{ xs: 1, md: 2, lg: 3 }}
             gap="lg"
           >
-            {t('services.testimonials.items').map((testimonial: any, index: number) => (
+            {(t('services.testimonials.items') || []).map((testimonial: any, index: number) => (
               <Card 
                 key={index} 
                 className={`p-6 ${

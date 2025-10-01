@@ -4,8 +4,7 @@ import {
   getProducts, 
   getServices, 
   getTestimonials,
-  getCompanyInfo,
-  getNavigationItems 
+  getCompanyInfo
 } from '../config';
 
 // Routes
@@ -27,7 +26,7 @@ export const APP_NAME = getGlobalConfig().app.name;
 export const APP_DESCRIPTION = getGlobalConfig().app.description;
 
 // Navigation items from configuration
-export const NAVIGATION_ITEMS = getNavigationItems();
+export const NAVIGATION_ITEMS = getGlobalConfig().navigation.items;
 
 // Color scheme variations for home pages - Now from configuration
 export const HOME_PAGE_THEMES = getGlobalConfig().themes;

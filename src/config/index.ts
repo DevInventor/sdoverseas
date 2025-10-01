@@ -204,8 +204,6 @@ export const getProducts = () => productsConfig.products;
 export const getServices = () => getDataConfig().services;
 export const getTestimonials = () => getDataConfig().testimonials;
 export const getCompanyInfo = () => getGlobalConfig().company;
-export const getNavigationItems = () => getGlobalConfig().navigation.items;
-export const getHomeVariants = () => getGlobalConfig().navigation.homeVariants;
 
 // Configuration validation
 export const validateConfig = (config: any): boolean => {

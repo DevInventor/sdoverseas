@@ -14,7 +14,6 @@ import { Products } from './pages/Products';
 import { ProductDetail } from './pages/ProductDetail';
 import { Services } from './pages/Services';
 import { Contact } from './pages/Contact';
-import { ComponentDemo } from './components/pages/ComponentDemo';
 
 
 const Testimonials = () => (
@@ -56,8 +55,6 @@ function AppContent() {
           <Route path={ROUTES.CONTACT} element={<Contact />} />
           <Route path={ROUTES.TESTIMONIALS} element={<Testimonials />} />
           
-          {/* Component Demo Page */}
-          <Route path="/demo" element={<ComponentDemo />} />
           
           {/* Catch all route */}
           <Route path="*" element={<HomeFinal />} />

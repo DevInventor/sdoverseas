@@ -1,7 +1,9 @@
 {
   "hero": {
     "title": "Unsere Dienstleistungen",
-    "subtitle": "Umfassende Gewürzhandelslösungen, die auf Ihre Geschäftsanforderungen zugeschnitten sind und Ihre Erwartungen übertreffen."
+    "subtitle": "Umfassende Gewürzhandelslösungen, die auf Ihre Geschäftsanforderungen zugeschnitten sind und Ihre Erwartungen übertreffen.",
+    "image": "/sdoverseas/service-hero.png",
+    "imageAlt": "SD Overseas umfassende Gewürzhandelsdienstleistungen - vom Anbau bis zur globalen Lieferung"
   },
   "services": {
     "title": "Unsere Kernleistungen",
