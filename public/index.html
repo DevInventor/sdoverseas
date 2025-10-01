@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SD Overseas - Premium Indian Spices for Global Markets</title>
+    <meta name="description" content="Experience the authentic flavors of India with our carefully sourced, high-quality spices that bring the taste of tradition to your table.">
+    <meta name="keywords" content="Indian spices, premium spices, global spice trade, cumin, turmeric, cardamom, fennel, coriander">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SD Overseas - Premium Indian Spices">
+    <meta property="og:description" content="Premium Indian spices for global markets. Experience authentic flavors with our carefully sourced, high-quality spices.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://devinventor.github.io/sdoverseas/">
+    <meta property="og:image" content="https://devinventor.github.io/sdoverseas/hero-section-v3.png">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SD Overseas - Premium Indian Spices">
+    <meta name="twitter:description" content="Premium Indian spices for global markets. Experience authentic flavors with our carefully sourced, high-quality spices.">
+    <meta name="twitter:image" content="https://devinventor.github.io/sdoverseas/hero-section-v3.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/sdoverseas/logo.svg">
+    <link rel="apple-touch-icon" href="/sdoverseas/logo.svg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="/sdoverseas/assets/index-DULrzNaE.css" as="style">
+    <link rel="preload" href="/sdoverseas/assets/index-OJrJ2fYc.js" as="script">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/sdoverseas/assets/index-DULrzNaE.css">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#f97316">
+    
+    <!-- Loading Styles -->
+    <style>
+        #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            color: white;
+            font-family: 'Work Sans', Inter, ui-sans-serif, system-ui, sans-serif;
+        }
+        
+        .loading-content {
+            text-align: center;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 2rem;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #f97316;
+        }
+        
+        .spinner {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border: 4px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 1rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        .loading-text {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .loading-subtext {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loading-content">
+            <div class="logo">SD</div>
+            <div class="spinner"></div>
+            <div class="loading-text">Loading SD Overseas</div>
+            <div class="loading-subtext">Premium Indian Spices for Global Markets</div>
+        </div>
+    </div>
+    
+    <!-- React App Root -->
+    <div id="root"></div>
+    
+    <!-- Scripts -->
+    <script type="module" src="/sdoverseas/assets/index-OJrJ2fYc.js"></script>
+    
+    <!-- Remove loading screen when app loads -->
+    <script>
+        // Hide loading screen when React app is ready
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                const loadingScreen = document.getElementById('loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    loadingScreen.style.transition = 'opacity 0.5s ease';
+                    setTimeout(function() {
+                        loadingScreen.remove();
+                    }, 500);
+                }
+            }, 1000); // Show loading for at least 1 second
+        });
+    </script>
+</body>
+</html>
