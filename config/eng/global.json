@@ -1,0 +1,58 @@
+{
+  "app": {
+    "name": "SD Overseas",
+    "description": "Premium Indian Spices Import & Export",
+    "tagline": "Connecting the world with authentic Indian flavors"
+  },
+  "company": {
+    "name": "SD Overseas",
+    "description": "SD Overseas specializes in the import and export of high-quality Indian spices, connecting businesses worldwide with the rich flavors of India.",
+    "address": {
+      "street": "123 Spice Lane",
+      "city": "Mumbai",
+      "state": "Maharashtra",
+      "country": "India",
+      "postalCode": "400001"
+    },
+    "contact": {
+      "email": "info@sdoverseas.com",
+      "phone": "+91 98765 43210",
+      "whatsapp": "+91 98765 43210"
+    },
+    "social": {
+      "linkedin": "https://linkedin.com/company/sdoverseas",
+      "twitter": "https://twitter.com/sdoverseas",
+      "facebook": "https://facebook.com/sdoverseas",
+      "instagram": "https://instagram.com/sdoverseas"
+    },
+    "businessHours": {
+      "weekdays": "9:00 AM - 6:00 PM",
+      "saturday": "9:00 AM - 4:00 PM",
+      "sunday": "Closed"
+    }
+  },
+  "navigation": {
+    "items": [
+      { "name": "Home", "href": "/" },
+      { "name": "About", "href": "/about" },
+      { "name": "Products", "href": "/products" },
+      { "name": "Services", "href": "/services" },
+      { "name": "Contact", "href": "/contact" }
+    ],
+    "homeVariants": []
+  },
+  "theme": {
+    "primary": "orange",
+    "secondary": "blue",
+    "accent": "green"
+  },
+  "themes": {
+    "home": [
+      {
+        "name": "Home Final",
+        "href": "/",
+        "description": "Modern, professional design with hero section and featured content"
+      }
+    ]
+  }
+}
