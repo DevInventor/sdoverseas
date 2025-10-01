@@ -4,7 +4,6 @@ import {
   Card,
   CardContent,
   ResponsiveGrid,
-  ResponsiveStack,
   Button,
   Icon,
 } from "../components/common";
@@ -180,29 +179,119 @@ export const About: React.FC = () => {
         />
 
         {/* CTA Section */}
-        <section className="py-16">
-            <Card className="text-center p-12 bg-primary/5 dark:bg-primary/10">
-              <CardContent>
-                <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4">
-                  {t('about.sections.cta.title')}
-                </h2>
-                <p className="text-subtle-light dark:text-subtle-dark mb-8 max-w-2xl mx-auto">
-                  {t('about.sections.cta.subtitle')}
-                </p>
-                <ResponsiveStack
-                  direction={{ xs: "column", sm: "row" }}
-                  spacing="md"
-                  justifyContent="center"
-                >
-                  <Button variant="primary" size="lg" href={t('about.sections.cta.primaryButton.href')}>
-                    {t('about.sections.cta.primaryButton.text')}
-                  </Button>
-                  <Button variant="outline" size="lg" href={t('about.sections.cta.secondaryButton.href')}>
-                    {t('about.sections.cta.secondaryButton.text')}
-                  </Button>
-                </ResponsiveStack>
-              </CardContent>
-            </Card>
+        <section className="py-20">
+          <div className="relative overflow-hidden">
+            {/* Background Pattern */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-primary/5 to-secondary/10 dark:from-primary/20 dark:via-primary/10 dark:to-secondary/20"></div>
+            <div className="absolute inset-0 opacity-30" style={{
+              backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f97316' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
+            }}></div>
+            
+            <div className="relative">
+              <Card className="text-center p-16 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm border-0 shadow-2xl">
+                <CardContent>
+                  {/* Icon */}
+                  <div className="w-20 h-20 bg-primary rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg">
+                    <Icon name="handshake" size="2xl" color="white" />
+                  </div>
+                  
+                  {/* Title */}
+                  <h2 className="text-4xl md:text-5xl font-bold text-text-light dark:text-text-dark mb-6">
+                    {t('about.sections.cta.title')}
+                  </h2>
+                  
+                  {/* Subtitle */}
+                  <p className="text-lg text-subtle-light dark:text-subtle-dark mb-12 max-w-3xl mx-auto leading-relaxed">
+                    {t('about.sections.cta.subtitle')}
+                  </p>
+                  
+                  {/* Benefits Grid */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+                    <div className="flex flex-col items-center p-6 bg-primary/5 dark:bg-primary/10 rounded-xl">
+                      <div className="w-12 h-12 bg-primary/20 dark:bg-primary/30 rounded-lg flex items-center justify-center mb-4">
+                        <Icon name="verified" size="lg" color="primary" />
+                      </div>
+                      <h3 className="font-semibold text-text-light dark:text-text-dark mb-2">
+                        {t('about.sections.cta.benefits.quality.title')}
+                      </h3>
+                      <p className="text-sm text-subtle-light dark:text-subtle-dark text-center">
+                        {t('about.sections.cta.benefits.quality.description')}
+                      </p>
+                    </div>
+                    
+                    <div className="flex flex-col items-center p-6 bg-primary/5 dark:bg-primary/10 rounded-xl">
+                      <div className="w-12 h-12 bg-primary/20 dark:bg-primary/30 rounded-lg flex items-center justify-center mb-4">
+                        <Icon name="local_shipping" size="lg" color="primary" />
+                      </div>
+                      <h3 className="font-semibold text-text-light dark:text-text-dark mb-2">
+                        {t('about.sections.cta.benefits.shipping.title')}
+                      </h3>
+                      <p className="text-sm text-subtle-light dark:text-subtle-dark text-center">
+                        {t('about.sections.cta.benefits.shipping.description')}
+                      </p>
+                    </div>
+                    
+                    <div className="flex flex-col items-center p-6 bg-primary/5 dark:bg-primary/10 rounded-xl">
+                      <div className="w-12 h-12 bg-primary/20 dark:bg-primary/30 rounded-lg flex items-center justify-center mb-4">
+                        <Icon name="support_agent" size="lg" color="primary" />
+                      </div>
+                      <h3 className="font-semibold text-text-light dark:text-text-dark mb-2">
+                        {t('about.sections.cta.benefits.support.title')}
+                      </h3>
+                      <p className="text-sm text-subtle-light dark:text-subtle-dark text-center">
+                        {t('about.sections.cta.benefits.support.description')}
+                      </p>
+                    </div>
+                  </div>
+                  
+                  {/* Action Buttons */}
+                  <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
+                    <Button 
+                      variant="primary" 
+                      size="lg" 
+                      href={t('about.sections.cta.primaryButton.href')}
+                      className="w-full sm:w-auto px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                      icon={<Icon name="email" size="md" color="white" />}
+                      iconPosition="left"
+                    >
+                      {t('about.sections.cta.primaryButton.text')}
+                    </Button>
+                    <Button 
+                      variant="outline" 
+                      size="lg" 
+                      href={t('about.sections.cta.secondaryButton.href')}
+                      className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105"
+                      icon={<Icon name="inventory" size="md" color="primary" />}
+                      iconPosition="left"
+                    >
+                      {t('about.sections.cta.secondaryButton.text')}
+                    </Button>
+                  </div>
+                  
+                  {/* Trust Indicators */}
+                  <div className="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+                    <p className="text-sm text-subtle-light dark:text-subtle-dark mb-4">
+                      {t('about.sections.cta.trustText')}
+                    </p>
+                    <div className="flex flex-wrap justify-center items-center gap-6 text-xs text-subtle-light dark:text-subtle-dark">
+                      <div className="flex items-center gap-2">
+                        <Icon name="verified" size="sm" color="primary" />
+                        <span>{t('about.sections.cta.trustItems.certified')}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Icon name="public" size="sm" color="primary" />
+                        <span>{t('about.sections.cta.trustItems.global')}</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <Icon name="schedule" size="sm" color="primary" />
+                        <span>{t('about.sections.cta.trustItems.reliable')}</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
         </section>
       </PageContainer>
     </div>

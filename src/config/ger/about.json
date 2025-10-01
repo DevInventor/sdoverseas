@@ -54,9 +54,27 @@
       "title": "Unsere Dienstleistungen",
       "subtitle": "Ein umfassendes Dienstleistungspaket zur Unterstützung Ihrer Gewürzhandelsbedürfnisse"
     },
+    "globalPresence": {
+      "title": "Globale Präsenz",
+      "subtitle": "Authentische indische Gewürze mit Märkten auf der ganzen Welt verbinden"
+    },
     "cta": {
       "title": "Bereit, mit uns zu kooperieren?",
       "subtitle": "Erleben Sie den SD Overseas Unterschied. Lassen Sie uns Ihnen helfen, die feinsten indischen Gewürze für Ihre Geschäftsbedürfnisse zu beschaffen.",
+      "benefits": {
+        "quality": {
+          "title": "Premium Qualität",
+          "description": "Strenge Qualitätskontrolle stellt sicher, dass jedes Gewürz internationale Standards erfüllt"
+        },
+        "shipping": {
+          "title": "Weltweiter Versand",
+          "description": "Weltweite Lieferung mit temperaturkontrollierten Containern"
+        },
+        "support": {
+          "title": "Expertenunterstützung",
+          "description": "Dediziertes Team, das Sie während Ihrer gesamten Reise begleitet"
+        }
+      },
       "primaryButton": {
         "text": "Kontakt aufnehmen",
         "href": "/contact"
@@ -64,6 +82,12 @@
       "secondaryButton": {
         "text": "Unsere Produkte anzeigen",
         "href": "/products"
+      },
+      "trustText": "Vertraut von Unternehmen weltweit",
+      "trustItems": {
+        "certified": "ISO Zertifiziert",
+        "global": "50+ Länder",
+        "reliable": "24/7 Support"
       }
     }
   }

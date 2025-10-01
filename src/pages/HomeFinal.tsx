@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Icon } from '../components/common';
 import AnimatedTestimonials from '../components/ui/AnimatedTestimonials';
+import Preloader from '../components/ui/Preloader';
 import { getTestimonials } from '../config';
 
 export const HomeFinal: React.FC = () => {
   const { t } = useLanguage();
+  const [showPreloader, setShowPreloader] = useState(true);
   
   // Get testimonials data and transform for animated component
   const testimonialsData = getTestimonials().map(testimonial => ({
@@ -17,16 +19,23 @@ export const HomeFinal: React.FC = () => {
     company: testimonial.company
   }));
 
+  const handlePreloaderComplete = useCallback(() => {
+    setShowPreloader(false);
+  }, []);
+
   return (
+    <>
+      {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section 
-        className="relative h-[600px] flex items-center justify-center text-center text-white"
+        className="relative h-[600px] flex items-center justify-center text-center text-white bg-gradient-to-br from-primary/90 to-primary"
         style={{
           backgroundImage: `url("${t('home-final.hero.backgroundImage')}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
-          backgroundRepeat: 'no-repeat'
+          backgroundRepeat: 'no-repeat',
+          backgroundBlendMode: 'overlay'
         }}
       >
         {/* Dark overlay */}
@@ -151,5 +160,6 @@ export const HomeFinal: React.FC = () => {
         />
       </div>
     </div>
+    </>
   );
 };

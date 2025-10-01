@@ -80,27 +80,27 @@ export const SearchDropdown: React.FC<SearchDropdownProps> = ({
   return (
     <div
       ref={dropdownRef}
-      className={`absolute top-full left-0 right-0 mt-1 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg shadow-xl z-50 max-h-96 overflow-y-auto w-full min-w-80 ${className}`}
+      className={`absolute top-full left-0 right-0 mt-2 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border border-gray-200/50 dark:border-gray-700/50 rounded-xl shadow-2xl z-50 max-h-96 overflow-y-auto w-full min-w-80 ${className}`}
     >
       {results.length > 0 ? (
         <div className="py-2">
           {results.map((result, index) => (
             <div
               key={`${result.type}-${result.id}`}
-              className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-colors ${
+              className={`flex items-center gap-3 px-4 py-3 cursor-pointer transition-all duration-200 rounded-lg mx-2 ${
                 index === selectedIndex
-                  ? 'bg-primary/10 dark:bg-primary/20'
-                  : 'hover:bg-gray-50 dark:hover:bg-gray-700'
+                  ? 'bg-primary/10 dark:bg-primary/20 border border-primary/20 dark:border-primary/30 shadow-sm'
+                  : 'hover:bg-gray-50/80 dark:hover:bg-gray-700/80 hover:shadow-sm'
               }`}
               onClick={() => onSelect(result)}
             >
               {/* Product/Service Image */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden bg-gray-100 dark:bg-gray-700">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg overflow-hidden bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 shadow-sm">
                 {result.type === 'product' ? (
                   <img
                     src={getProductImage(result.id)}
                     alt={result.name}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover transition-transform duration-200 hover:scale-105"
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
                       target.style.display = 'none';
@@ -123,10 +123,10 @@ export const SearchDropdown: React.FC<SearchDropdownProps> = ({
                   <h4 className="text-base font-medium text-gray-900 dark:text-white truncate">
                     {result.name}
                   </h4>
-                  <span className={`px-2 py-1 text-xs rounded-full ${
+                  <span className={`px-2 py-1 text-xs font-medium rounded-full border ${
                     result.type === 'product'
-                      ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-300'
-                      : 'bg-blue-100 text-blue-800 dark:bg-blue-900/20 dark:text-blue-300'
+                      ? 'bg-green-50 text-green-700 border-green-200 dark:bg-green-900/20 dark:text-green-300 dark:border-green-800'
+                      : 'bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-900/20 dark:text-blue-300 dark:border-blue-800'
                   }`}>
                     {result.type === 'product' ? 'Product' : 'Service'}
                   </span>
@@ -143,18 +143,25 @@ export const SearchDropdown: React.FC<SearchDropdownProps> = ({
 
               {/* Arrow Icon */}
               <div className="flex-shrink-0">
-                <Icon name="arrow_forward" size="sm" color="gray" />
+                <Icon 
+                  name="arrow_forward" 
+                  size="sm" 
+                  color="gray" 
+                  className="transition-transform duration-200 group-hover:translate-x-1" 
+                />
               </div>
             </div>
           ))}
         </div>
       ) : (
-        <div className="px-4 py-6 text-center">
-          <Icon name="search_off" size="lg" color="gray" className="mx-auto mb-2" />
-          <p className="text-sm text-gray-500 dark:text-gray-400">
+        <div className="px-4 py-8 text-center">
+          <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center">
+            <Icon name="search_off" size="lg" color="gray" />
+          </div>
+          <p className="text-sm font-medium text-gray-600 dark:text-gray-300 mb-1">
             No results found for "{query}"
           </p>
-          <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
+          <p className="text-xs text-gray-500 dark:text-gray-400">
             Try searching for spices, services, or product names
           </p>
         </div>
@@ -162,10 +169,15 @@ export const SearchDropdown: React.FC<SearchDropdownProps> = ({
 
       {/* Footer with search tips */}
       {results.length > 0 && (
-        <div className="border-t border-gray-200 dark:border-gray-700 px-4 py-2">
-          <div className="flex items-center justify-between text-xs text-gray-400 dark:text-gray-500">
-            <span>Use ↑↓ to navigate, Enter to select</span>
-            <span>{results.length} result{results.length !== 1 ? 's' : ''}</span>
+        <div className="border-t border-gray-200/50 dark:border-gray-700/50 px-4 py-3 bg-gray-50/50 dark:bg-gray-800/50 rounded-b-xl">
+          <div className="flex items-center justify-between text-xs text-gray-500 dark:text-gray-400">
+            <span className="flex items-center gap-1">
+              <Icon name="keyboard" size="xs" color="gray" />
+              Use ↑↓ to navigate, Enter to select
+            </span>
+            <span className="font-medium">
+              {results.length} result{results.length !== 1 ? 's' : ''}
+            </span>
           </div>
         </div>
       )}

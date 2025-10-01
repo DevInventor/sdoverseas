@@ -54,9 +54,27 @@
       "title": "Our Services",
       "subtitle": "A comprehensive suite of services to support your spice trading needs"
     },
+    "globalPresence": {
+      "title": "Global Presence",
+      "subtitle": "Connecting authentic Indian spices with markets across the world"
+    },
     "cta": {
       "title": "Ready to Partner With Us?",
       "subtitle": "Experience the SD Overseas difference. Let us help you source the finest Indian spices for your business needs.",
+      "benefits": {
+        "quality": {
+          "title": "Premium Quality",
+          "description": "Rigorous quality control ensures every spice meets international standards"
+        },
+        "shipping": {
+          "title": "Global Shipping",
+          "description": "Worldwide delivery with temperature-controlled containers"
+        },
+        "support": {
+          "title": "Expert Support",
+          "description": "Dedicated team providing guidance throughout your journey"
+        }
+      },
       "primaryButton": {
         "text": "Get In Touch",
         "href": "/contact"
@@ -64,6 +82,12 @@
       "secondaryButton": {
         "text": "View Our Products",
         "href": "/products"
+      },
+      "trustText": "Trusted by businesses worldwide",
+      "trustItems": {
+        "certified": "ISO Certified",
+        "global": "50+ Countries",
+        "reliable": "24/7 Support"
       }
     }
   }

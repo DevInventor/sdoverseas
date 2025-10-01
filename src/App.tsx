@@ -3,6 +3,7 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { MainLayout } from './components/layout/MainLayout';
 import { PageContainer } from './components/layout/PageContainer';
+import { PageTransitionLoader } from './components/ui/PageTransitionLoader';
 import { ROUTES } from './constants';
 import { useScrollToTop } from './hooks/useScrollToTop';
 
@@ -42,24 +43,27 @@ function AppContent() {
   useScrollToTop();
 
   return (
-    <MainLayout>
-      <Routes>
-        {/* Main Pages */}
-        <Route path="/" element={<HomeFinal />} />
-        <Route path={ROUTES.ABOUT} element={<About />} />
-        <Route path={ROUTES.PRODUCTS} element={<Products />} />
-        <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
-        <Route path={ROUTES.SERVICES} element={<Services />} />
-        <Route path={ROUTES.CONTACT} element={<Contact />} />
-        <Route path={ROUTES.TESTIMONIALS} element={<Testimonials />} />
-        
-        {/* Component Demo Page */}
-        <Route path="/demo" element={<ComponentDemo />} />
-        
-        {/* Catch all route */}
-        <Route path="*" element={<HomeFinal />} />
-      </Routes>
-    </MainLayout>
+    <>
+      <PageTransitionLoader />
+      <MainLayout>
+        <Routes>
+          {/* Main Pages */}
+          <Route path="/" element={<HomeFinal />} />
+          <Route path={ROUTES.ABOUT} element={<About />} />
+          <Route path={ROUTES.PRODUCTS} element={<Products />} />
+          <Route path={ROUTES.PRODUCT_DETAIL} element={<ProductDetail />} />
+          <Route path={ROUTES.SERVICES} element={<Services />} />
+          <Route path={ROUTES.CONTACT} element={<Contact />} />
+          <Route path={ROUTES.TESTIMONIALS} element={<Testimonials />} />
+          
+          {/* Component Demo Page */}
+          <Route path="/demo" element={<ComponentDemo />} />
+          
+          {/* Catch all route */}
+          <Route path="*" element={<HomeFinal />} />
+        </Routes>
+      </MainLayout>
+    </>
   );
 }
 
