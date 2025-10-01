@@ -56,19 +56,46 @@
       "subtitle": "Discover our most popular and premium spice selections",
       "items": [
         {
-          "name": "Premium Turmeric",
-          "description": "Golden turmeric with exceptional curcumin content",
-          "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=2070&auto=format&fit=crop"
+          "id": "cumin",
+          "name": "Cumin Seeds (Jeera)",
+          "category": "Whole Spices",
+          "origin": "Rajasthan, India",
+          "description": "Premium cumin seeds from the arid regions of Rajasthan, known for their intense aroma and earthy flavor. These seeds are carefully harvested and processed to maintain their natural oils and essential compounds.",
+          "image": "https://plus.unsplash.com/premium_photo-1723874683717-006f24c93975",
+          "specifications": {
+            "form": "Whole Seeds",
+            "moisture": "8-10%",
+            "packaging": "25kg / 50kg Bags",
+            "color": "Brown"
+          }
         },
         {
-          "name": "Whole Cardamom",
-          "description": "Aromatic green cardamom pods for authentic flavor",
-          "image": "https://images.unsplash.com/photo-1609501676725-7186f3a1f2ed?q=80&w=2070&auto=format&fit=crop"
+          "id": "fennel-seeds",
+          "name": "Fennel Seeds (Saunf)",
+          "category": "Whole Spices",
+          "origin": "Gujarat, India",
+          "description": "Sweet and aromatic fennel seeds with a licorice-like flavor. Perfect for digestive purposes and adding a unique taste to dishes. These seeds are known for their cooling properties and refreshing aroma.",
+          "image": "https://images.unsplash.com/photo-1701189975842-591ebd1e26a2",
+          "specifications": {
+            "form": "Whole Seeds",
+            "flavor": "Sweet & Aromatic",
+            "packaging": "25kg / 50kg Bags",
+            "color": "Green"
+          }
         },
         {
-          "name": "Cumin Seeds",
-          "description": "Premium cumin seeds with rich, earthy aroma",
-          "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=2070&auto=format&fit=crop"
+          "id": "coriander-seeds",
+          "name": "Coriander Seeds (Dhaniya seeds)",
+          "category": "Whole Spices",
+          "origin": "Rajasthan, India",
+          "description": "Mild and citrusy coriander seeds that enhance the flavor of any curry. Sourced from the finest coriander plants and carefully processed to retain their natural oils and aroma.",
+          "image": "https://images.unsplash.com/photo-1608797179072-4268dd68eff2?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+          "specifications": {
+            "form": "Whole Seeds",
+            "aroma": "Citrusy",
+            "packaging": "25kg / 50kg Bags",
+            "color": "Light Brown"
+          }
         }
       ],
       "cta": {
