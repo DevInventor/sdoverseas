@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { NAVIGATION_ITEMS, COMPANY_INFO } from '../../constants';
 import { ThemeToggle } from '../common/ThemeToggle';
 import { LanguageToggle } from '../common/LanguageToggle';
 import { Button, Icon, SearchDropdown } from '../common';
 import { Menu, X } from 'lucide-react';
 import { useSearch, SearchResult } from '../../hooks/useSearch';
-import { useNavigate } from 'react-router-dom';
 
 interface HeaderProps {
   className?: string;

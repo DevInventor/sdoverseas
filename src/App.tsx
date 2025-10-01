@@ -29,7 +29,7 @@ function App() {
   return (
     <ThemeProvider>
       <LanguageProvider>
-        <Router>
+        <Router basename="/sdoverseas">
           <AppContent />
         </Router>
       </LanguageProvider>
