@@ -109,21 +109,27 @@
     </div>
 
     <script>
-        // Get the current path and redirect to the SPA
-        const currentPath = window.location.pathname;
-        const basePath = '/sdoverseas';
-        
-        // If we're already on the base path, just reload
-        if (currentPath === basePath || currentPath === basePath + '/') {
-            window.location.href = basePath + '/';
-            return;
-        }
-        
-        // For any other path, redirect to the base path and let React Router handle it
-        // This ensures that React Router can take over and handle the routing
-        setTimeout(() => {
-            window.location.href = basePath + '/';
-        }, 1000);
+        // Single Page Apps for GitHub Pages
+        // MIT License
+        // https://github.com/rafgraph/spa-github-pages
+        // This script checks to see if a redirect is already in place
+        // If so, it removes the redirect and sets the path to the route we want to go to
+        // If not, it creates a redirect to the 404.html page, which will then redirect back to the route we want to go to
+        (function(){
+            var redirect = sessionStorage.getItem('redirect');
+            if (redirect) {
+                sessionStorage.removeItem('redirect');
+                history.replaceState(null, null, redirect);
+            } else {
+                var path = window.location.pathname;
+                var base = '/sdoverseas'; // Replace with your repo name
+                if (path.startsWith(base)) {
+                    path = path.substring(base.length);
+                }
+                sessionStorage.setItem('redirect', base + path);
+                window.location.replace(base + '/404.html');
+            }
+        })();
     </script>
 </body>
 </html>
