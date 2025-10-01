@@ -1,8 +1,9 @@
 {
-  "name": "sd-overseas-website",
+  "name": "SD-Overseas",
   "private": true,
   "version": "1.0.0",
   "type": "module",
+  "homepage": "https://devinventor.github.io/SD-Overseas",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -25,6 +26,7 @@
     "zustand": "^4.5.5"
   },
   "devDependencies": {
+    "@types/node": "^24.6.1",
     "@types/react": "^18.2.66",
     "@types/react-dom": "^18.2.22",
     "@typescript-eslint/eslint-plugin": "^7.2.0",

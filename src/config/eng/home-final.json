@@ -2,7 +2,7 @@
   "hero": {
     "title": "Premium Indian Spices for Global Markets",
     "subtitle": "Experience the authentic flavors of India with our carefully sourced, high-quality spices that bring the taste of tradition to your table.",
-    "backgroundImage": "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?q=80&w=2070&auto=format&fit=crop",
+    "backgroundImage": "/sd-overseas/hero-section-v3.png",
     "cta": {
       "text": "Explore Our Products",
       "href": "/products"
