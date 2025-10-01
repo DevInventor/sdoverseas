@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { COMPANY_INFO, ROUTES } from '../../constants';
 import { Facebook, Twitter, Linkedin, Instagram, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../../contexts/LanguageContext';
 
 const footerLinks = [
   { name: 'Home', href: '/' },
@@ -18,8 +19,22 @@ const supportLinks = [
 ];
 
 export const Footer: React.FC = () => {
+  const { t } = useLanguage();
   // Format phone number for WhatsApp (remove all non-digits)
-  const whatsappNumber = COMPANY_INFO.contact.whatsapp.replace(/\D/g, '');
+  const whatsappNumber = t('contact.contactInfo.whatsapp.value').replace(/\D/g, '');
+
+  // Generate WhatsApp message
+  const generateWhatsAppMessage = () => {
+    const message = `Hello! I'm interested in your spice trading services. Please provide me with more information about your products and services. Thank you!`;
+    return encodeURIComponent(message);
+  };
+
+  // Handle WhatsApp click
+  const handleWhatsAppClick = () => {
+    const message = generateWhatsAppMessage();
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
   
   return (
     <footer className="bg-slate-50 dark:bg-slate-900 border-t border-slate-200 dark:border-slate-700">
@@ -122,22 +137,20 @@ export const Footer: React.FC = () => {
           <div>
             <h3 className="font-semibold text-slate-900 dark:text-white mb-4">Get in Touch</h3>
             <div className="space-y-4">
-              <a
-                href={`https://wa.me/${whatsappNumber}`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleWhatsAppClick}
                 aria-label="Chat with us on WhatsApp"
                 className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[#25D366] text-white font-semibold hover:bg-[#20BA5A] focus:outline-none focus:ring-2 focus:ring-[#25D366] focus:ring-offset-2 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl"
               >
                 <MessageCircle className="h-5 w-5" />
-                <span>Chat on WhatsApp</span>
-              </a>
+                <span>{t('contact.form.whatsappText')}</span>
+              </button>
               <div className="text-sm text-slate-600 dark:text-slate-400">
                 <p className="mb-1">
-                  <span className="font-medium">Email:</span> {COMPANY_INFO.contact.email}
+                  <span className="font-medium">Email:</span> {t('contact.contactInfo.email.value')}
                 </p>
                 <p>
-                  <span className="font-medium">Phone:</span> {COMPANY_INFO.contact.phone}
+                  <span className="font-medium">Phone:</span> {t('contact.contactInfo.phone.value')}
                 </p>
               </div>
             </div>

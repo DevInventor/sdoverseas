@@ -31,13 +31,19 @@
     "title": "Our Location",
     "address": {
       "title": "Address",
-      "value": "123 Spice Lane, Mumbai, Maharashtra, India"
+      "value": "APMC, Unjha, Gujarat, India"
     },
     "email": {
-      "title": "Email"
+      "title": "Email",
+      "value": "info@sdoverseas.com"  
     },
     "phone": {
-      "title": "Phone"
+      "title": "Phone",
+      "value": "+91 98765 43210"
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "value": "+91 98765 43210"
     }
   },
   "map": {

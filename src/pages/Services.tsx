@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { PageContainer } from '../components/layout/PageContainer';
 import { 
   Card, 
@@ -9,6 +10,7 @@ import {
   FloatingActionButton
 } from '../components/common';
 import { SERVICES_DATA } from '../constants';
+import { scrollToTop } from '../hooks/useScrollToTop';
 
 export const Services: React.FC = () => {
   const serviceProcessSteps = [
@@ -88,12 +90,16 @@ export const Services: React.FC = () => {
                 Our comprehensive services ensure quality, compliance, and customer satisfaction.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Button variant="primary" size="lg" href="/contact">
-                  Get Started Today
-                </Button>
-                <Button variant="outline" size="lg" href="/contact">
-                  View Pricing
-                </Button>
+                <Link to="/contact" onClick={scrollToTop}>
+                  <Button variant="primary" size="lg">
+                    Get Started Today
+                  </Button>
+                </Link>
+                <Link to="/contact" onClick={scrollToTop}>
+                  <Button variant="outline" size="lg">
+                    View Pricing
+                  </Button>
+                </Link>
               </div>
             </div>
             <div>
@@ -269,12 +275,16 @@ export const Services: React.FC = () => {
                 Contact us today to discuss your requirements and start your journey with us.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="lg" href="/contact">
-                  Request Quote
-                </Button>
-                <Button variant="outline" size="lg" href="/contact">
-                  Schedule Consultation
-                </Button>
+                <Link to="/contact" onClick={scrollToTop}>
+                  <Button variant="primary" size="lg">
+                    Request Quote
+                  </Button>
+                </Link>
+                <Link to="/contact" onClick={scrollToTop}>
+                  <Button variant="outline" size="lg">
+                    Schedule Consultation
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>
@@ -283,7 +293,10 @@ export const Services: React.FC = () => {
         {/* Floating Action Button for Contact */}
         <FloatingActionButton
           icon="phone"
-          onClick={() => window.location.href = `/contact?ref=services&action=call`}
+          onClick={() => {
+            scrollToTop();
+            window.location.href = `/contact?ref=services&action=call`;
+          }}
           variant="primary"
           size="lg"
           label="Call Now"

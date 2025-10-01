@@ -31,13 +31,19 @@
     "title": "Unser Standort",
     "address": {
       "title": "Adresse",
-      "value": "123 Gewürzstraße, Mumbai, Maharashtra, Indien"
+      "value": "APMC, Unjha, Gujarat, Indien"
     },
     "email": {
-      "title": "E-Mail"
+      "title": "E-Mail",
+      "value": "info@sdoverseas.com"
     },
     "phone": {
-      "title": "Telefon"
+      "title": "Telefon",
+      "value": "+91 98765 43210"
+    },
+    "whatsapp": {
+      "title": "WhatsApp",
+      "value": "+91 98765 43210"
     }
   },
   "map": {
