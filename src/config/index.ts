@@ -3,13 +3,15 @@
 import globalConfig from './eng/global.json';
 import homeFinalConfig from './eng/home-final.json';
 import aboutConfig from './eng/about.json';
-import productsConfig from './eng/products.json';
+import engProductsConfig from './eng/products.json';
 import productDetailConfig from './eng/product-detail.json';
 import servicesConfig from './eng/services.json';
 import contactConfig from './eng/contact.json';
 import dataConfig from './data.json';
+import productsConfig from './products.json';
 import searchConfig from './search.json';
 import themeConfig from './theme.json';
+import globalPresenceConfig from './global-presence.json';
 
 // Type definitions for configuration
 export interface GlobalConfig {
@@ -184,7 +186,7 @@ export const getPageConfig = (page: string): PageConfig => {
   const configs: Record<string, any> = {
     'home-final': homeFinalConfig,
     'about': aboutConfig,
-    'products': productsConfig,
+    'products': engProductsConfig,
     'product-detail': productDetailConfig,
     'services': servicesConfig,
     'contact': contactConfig,
@@ -198,7 +200,7 @@ export const getSearchConfig = (): SearchConfig => searchConfig as SearchConfig;
 export const getThemeConfig = (): ThemeConfig => themeConfig as ThemeConfig;
 
 // Helper functions for specific data
-export const getProducts = () => getDataConfig().products;
+export const getProducts = () => productsConfig.products;
 export const getServices = () => getDataConfig().services;
 export const getTestimonials = () => getDataConfig().testimonials;
 export const getCompanyInfo = () => getGlobalConfig().company;
@@ -217,15 +219,49 @@ export const validateConfig = (config: any): boolean => {
   }
 };
 
+// Global Presence Configuration
+export interface GlobalPresenceConfig {
+  title: string;
+  subtitle: string;
+  map: {
+    lineColor: string;
+    showLabels: boolean;
+    animationDuration: number;
+    loop: boolean;
+    connections: Array<{
+      start: {
+        lat: number;
+        lng: number;
+        label: string;
+      };
+      end: {
+        lat: number;
+        lng: number;
+        label: string;
+      };
+    }>;
+  };
+  stats: Array<{
+    value: string;
+    label: string;
+  }>;
+}
+
+export const getGlobalPresenceConfig = (): GlobalPresenceConfig => {
+  return globalPresenceConfig as GlobalPresenceConfig;
+};
+
 // Export all configurations for direct access if needed
 export {
   globalConfig,
   homeFinalConfig,
   aboutConfig,
-  productsConfig,
+  engProductsConfig,
   productDetailConfig,
   servicesConfig,
   contactConfig,
   dataConfig,
+  productsConfig,
   searchConfig,
+  globalPresenceConfig,
 };

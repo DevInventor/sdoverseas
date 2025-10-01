@@ -4,7 +4,6 @@ import {
   Card, 
   CardContent, 
   ResponsiveGrid, 
-  ProgressBar,
   Button, 
   Icon,
   FloatingActionButton
@@ -148,10 +147,6 @@ export const Services: React.FC = () => {
                     </div>
                   </div>
                   
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-primary font-medium">Learn More</span>
-                    <Icon name="arrow_forward" size="sm" color="primary" />
-                  </div>
                 </CardContent>
               </Card>
             ))}
@@ -170,93 +165,45 @@ export const Services: React.FC = () => {
           </div>
 
           <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+            <div className="flex flex-col md:flex-row items-center gap-3 md:gap-1">
               {serviceProcessSteps.map((process, index) => (
-                <Card 
-                  key={index} 
-                  className={`relative text-center p-4 ${
-                    index % 2 === 0 
-                      ? 'bg-primary/5 dark:bg-primary/10' 
-                      : 'bg-secondary/5 dark:bg-secondary/10'
-                  }`}
-                >
-                  <CardContent>
-                    <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4 ${
-                      process.status === 'completed' ? 'bg-green-100 dark:bg-green-900/20 text-green-600' :
-                      process.status === 'current' ? 'bg-primary/10 dark:bg-primary/20 text-primary' :
-                      'bg-gray-100 dark:bg-gray-800 text-gray-400'
-                    }`}>
-                      <Icon name={process.icon} size="md" />
-                    </div>
-                    <h3 className="text-sm font-bold text-text-light dark:text-text-dark mb-2">
-                      {process.title}
-                    </h3>
-                    <p className="text-xs text-subtle-light dark:text-subtle-dark leading-relaxed">
-                      {process.description}
-                    </p>
-                  </CardContent>
-                  
-                  {/* Connection Line */}
-                  {index < serviceProcessSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-12 left-full w-full h-0.5 bg-gray-200 dark:bg-gray-700 -translate-x-1/2">
-                      <div className="absolute -right-1 -translate-y-1/2">
-                        <Icon name="arrow_forward" size="sm" color="secondary" />
+                <React.Fragment key={index}>
+                  <Card 
+                    className={`text-center p-4 flex-1 ${
+                      index % 2 === 0 
+                        ? 'bg-primary/5 dark:bg-primary/10' 
+                        : 'bg-secondary/5 dark:bg-secondary/10'
+                    }`}
+                  >
+                    <CardContent className="py-2">
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3 ${
+                        process.status === 'completed' ? 'bg-green-100 dark:bg-green-900/20 text-green-600' :
+                        process.status === 'current' ? 'bg-primary/10 dark:bg-primary/20 text-primary' :
+                        'bg-gray-100 dark:bg-gray-800 text-gray-400'
+                      }`}>
+                        <Icon name={process.icon} size="md" />
                       </div>
+                      <h3 className="text-sm font-bold text-text-light dark:text-text-dark mb-2">
+                        {process.title}
+                      </h3>
+                      <p className="text-xs text-subtle-light dark:text-subtle-dark leading-tight">
+                        {process.description}
+                      </p>
+                    </CardContent>
+                  </Card>
+                  
+                  {/* Arrow between cards */}
+                  {index < serviceProcessSteps.length - 1 && (
+                    <div className="hidden md:flex items-center justify-center text-primary/50 dark:text-primary/30 px-1">
+                      <Icon name="arrow_forward" size="md" />
                     </div>
                   )}
-                </Card>
+                </React.Fragment>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Quality Metrics */}
-        <section className="py-16">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-6">
-                Quality Assurance Metrics
-              </h2>
-              <p className="text-subtle-light dark:text-subtle-dark mb-8 leading-relaxed">
-                Our commitment to excellence is reflected in our quality metrics and customer satisfaction scores.
-              </p>
-
-              <div className="space-y-6">
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-text-light dark:text-text-dark">Quality Standards</span>
-                    <span className="text-sm font-bold text-green-600">99.8%</span>
-                  </div>
-                  <ProgressBar value={99.8} size="lg" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-text-light dark:text-text-dark">On-time Delivery</span>
-                    <span className="text-sm font-bold text-blue-600">96.2%</span>
-                  </div>
-                  <ProgressBar value={96.2} size="lg" />
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-sm font-medium text-text-light dark:text-text-dark">Customer Satisfaction</span>
-                    <span className="text-sm font-bold text-green-600">98.5%</span>
-                  </div>
-                  <ProgressBar value={98.5} size="lg" />
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <img
-                src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?q=80&w=2069&auto=format&fit=crop"
-                alt="Quality control laboratory"
-                className="w-full h-80 object-cover rounded-xl shadow-lg"
-              />
-            </div>
-          </div>
-        </section>
 
         {/* Client Testimonials */}
         <section className="py-16">

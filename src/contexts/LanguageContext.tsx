@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-export type Language = 'eng' | 'grm';
+export type Language = 'eng' | 'ger';
 
 interface LanguageContextType {
   language: Language;
@@ -28,7 +28,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
     if (typeof window === 'undefined') return 'eng';
     
     const savedLanguage = localStorage.getItem('language') as Language | null;
-    if (savedLanguage && ['eng', 'grm'].includes(savedLanguage)) {
+    if (savedLanguage && ['eng', 'ger'].includes(savedLanguage)) {
       return savedLanguage;
     }
     

@@ -1,0 +1,66 @@
+{
+  "title": "Our Global Presence",
+  "subtitle": "Connecting the world through premium spice trading. We source from the finest farms in India and deliver to customers worldwide.",
+  "map": {
+    "lineColor": "#F97316",
+    "showLabels": true,
+    "animationDuration": 2,
+    "loop": true,
+    "connections": [
+      {
+        "start": {
+          "lat": 28.6139,
+          "lng": 77.209,
+          "label": "India"
+        },
+        "end": {
+          "lat": 43.6532,
+          "lng": -79.3832,
+          "label": "Toronto, Canada"
+        }
+      },
+      {
+        "start": {
+          "lat": 28.6139,
+          "lng": 77.209,
+          "label": "India"
+        },
+        "end": {
+          "lat": 51.5074,
+          "lng": -0.1278,
+          "label": "London, UK"
+        }
+      },
+      {
+        "start": {
+          "lat": 28.6139,
+          "lng": 77.209,
+          "label": "India"
+        },
+        "end": {
+          "lat": -33.8688,
+          "lng": 151.2093,
+          "label": "Sydney, Australia"
+        }
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": "4",
+      "label": "Key Markets"
+    },
+    {
+      "value": "1000+",
+      "label": "Happy Customers"
+    },
+    {
+      "value": "15+",
+      "label": "Years Experience"
+    },
+    {
+      "value": "24/7",
+      "label": "Customer Support"
+    }
+  ]
+}

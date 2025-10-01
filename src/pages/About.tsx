@@ -10,6 +10,7 @@ import {
 } from "../components/common";
 import { SERVICES_DATA } from "../constants";
 import { useLanguage } from "../contexts/LanguageContext";
+import GlobalPresenceMap from "../components/ui/GlobalPresenceMap";
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
@@ -171,6 +172,12 @@ export const About: React.FC = () => {
             ))}
           </ResponsiveGrid>
         </section>
+
+        {/* Global Presence Map */}
+        <GlobalPresenceMap 
+          title={t('about.sections.globalPresence.title')}
+          subtitle={t('about.sections.globalPresence.subtitle')}
+        />
 
         {/* CTA Section */}
         <section className="py-16">

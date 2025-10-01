@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { cn } from '../../utils/cn';
 import { Icon } from './Icon';
-import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
+// import { useIntersectionObserver } from '../../hooks/useIntersectionObserver';
 
 // Breadcrumb Component
 interface BreadcrumbItem {

@@ -19,7 +19,7 @@ interface FormProps {
 export const Form: React.FC<FormProps> = ({
   children,
   onSubmit,
-  onSubmitError,
+  // onSubmitError,
   validation,
   loading = false,
   onReset,
@@ -46,9 +46,9 @@ export const Form: React.FC<FormProps> = ({
     onSubmit?.(values);
   };
 
-  const handleReset = () => {
-    onReset?.();
-  };
+  // const handleReset = () => {
+  //   onReset?.();
+  // };
 
   return (
     <form

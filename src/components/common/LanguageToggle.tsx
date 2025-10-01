@@ -6,7 +6,7 @@ export const LanguageToggle: React.FC<{ className?: string }> = ({ className = '
   const { language, setLanguage } = useLanguage();
 
   const toggleLanguage = () => {
-    setLanguage(language === 'eng' ? 'grm' : 'eng');
+    setLanguage(language === 'eng' ? 'ger' : 'eng');
   };
 
   const getLanguageLabel = () => {

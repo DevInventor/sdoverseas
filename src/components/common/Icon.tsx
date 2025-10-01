@@ -16,15 +16,15 @@ interface IconProps {
   bounce?: boolean;
 }
 
-const iconSizes = {
-  xs: 'text-xs',
-  sm: 'text-sm',
-  md: 'text-base',
-  lg: 'text-lg',
-  xl: 'text-xl',
-  '2xl': 'text-2xl',
-  '3xl': 'text-3xl',
-};
+// const iconSizes = {
+//   xs: 'text-xs',
+//   sm: 'text-sm',
+//   md: 'text-base',
+//   lg: 'text-lg',
+//   xl: 'text-xl',
+//   '2xl': 'text-2xl',
+//   '3xl': 'text-3xl',
+// };
 
 const materialIconSizes = {
   xs: 'text-xs',
@@ -43,7 +43,7 @@ const iconVariants = {
   sharp: '[font-variation-settings:\'GRAD\'0]',
 };
 
-const iconColors = {
+const iconColors: Record<string, string> = {
   primary: 'text-primary',
   secondary: 'text-gray-600 dark:text-gray-400',
   success: 'text-green-600 dark:text-green-400',

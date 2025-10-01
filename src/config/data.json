@@ -1,244 +1,4 @@
 {
-  "products": [
-    {
-      "id": "turmeric",
-      "name": "Turmeric Powder",
-      "category": "Ground Spices",
-      "origin": "Salem, India",
-      "description": "Sourced from the renowned fields of Salem, our premium Turmeric Powder is known for its vibrant color, rich aroma, and high curcumin content. Carefully processed to retain its natural oils and flavor, it's the perfect ingredient for culinary and medicinal applications.",
-      "image": "https://images.unsplash.com/photo-1615485500834-bc10199bc727?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "specifications": {
-        "form": "Fine Powder",
-        "curcuminContent": "3-5%",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Bright Yellow-Orange"
-      }
-    },
-    {
-      "id": "cumin",
-      "name": "Cumin Seeds",
-      "category": "Whole Spices",
-      "origin": "Rajasthan, India",
-      "description": "Premium cumin seeds from the arid regions of Rajasthan, known for their intense aroma and earthy flavor. These seeds are carefully harvested and processed to maintain their natural oils and essential compounds.",
-      "image": "https://plus.unsplash.com/premium_photo-1723874683717-006f24c93975?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "specifications": {
-        "form": "Whole Seeds",
-        "moisture": "8-10%",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Brown"
-      }
-    },
-    {
-      "id": "chilli",
-      "name": "Red Chilli Powder",
-      "category": "Ground Spices",
-      "origin": "Guntur, India",
-      "description": "Spicy and vibrant red chilli powder sourced from the famous Guntur region, known for producing some of the world's finest chillies. This powder delivers the perfect balance of heat and flavor.",
-      "image": "https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1257&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "specifications": {
-        "form": "Fine Powder",
-        "scovilleScale": "50000-100000",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Deep Red"
-      }
-    },
-    {
-      "id": "cardamom",
-      "name": "Green Cardamom",
-      "category": "Whole Spices",
-      "origin": "Kerala, India",
-      "description": "The \"Queen of Spices,\" our premium green cardamom from Kerala offers a complex sweet and spicy flavor profile. These aromatic pods are hand-picked and carefully processed to preserve their essential oils.",
-      "image": "https://images.unsplash.com/photo-1642255521852-7e7c742ac58f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "specifications": {
-        "form": "Whole Pods",
-        "aroma": "Highly Aromatic",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Green"
-      }
-    },
-    {
-      "id": "cinnamon",
-      "name": "Cinnamon Sticks",
-      "category": "Whole Spices",
-      "origin": "Malabar, India",
-      "description": "Premium cinnamon sticks from the Malabar coast, known for their sweet and woody aroma. These aromatic sticks are ideal for both savory and sweet recipes, adding depth and complexity to your culinary creations.",
-      "image": "https://images.unsplash.com/photo-1587411767714-d355c1f847ea?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "specifications": {
-        "form": "Whole Sticks",
-        "aroma": "Sweet Woody Scent",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Brown"
-      }
-    },
-    {
-      "id": "garam-masala",
-      "name": "Garam Masala",
-      "category": "Spice Blends",
-      "origin": "Multiple Regions",
-      "description": "A traditional warming blend of premium spices essential in Indian cuisine. Our garam masala combines the finest spices to create the perfect balance of flavors for authentic Indian taste.",
-      "image": "https://images.unsplash.com/photo-1603122612817-2fe0e0631a93?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      "specifications": {
-        "form": "Ground Blend",
-        "ingredients": "8-12 Spices",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Brown Mix"
-      }
-    },
-    {
-      "id": "black-pepper",
-      "name": "Black Peppercorns",
-      "category": "Whole Spices",
-      "origin": "Kerala, India",
-      "description": "The king of spices, our premium black peppercorns from Kerala are known for their sharp, pungent flavor and intense aroma. Perfect for adding heat and depth to any dish.",
-      "image": "https://images.unsplash.com/photo-1649952052743-5e8f37c348c5",
-      "specifications": {
-        "form": "Whole Peppercorns",
-        "heatLevel": "High",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Black"
-      }
-    },
-    {
-      "id": "coriander-powder",
-      "name": "Coriander Powder",
-      "category": "Ground Spices",
-      "origin": "Rajasthan, India",
-      "description": "Mild and citrusy coriander powder that enhances the flavor of any curry. Sourced from the finest coriander seeds and ground to perfection.",
-      "image": "https://images.unsplash.com/photo-1608797179072-4268dd68eff2",
-      "specifications": {
-        "form": "Fine Powder",
-        "aroma": "Citrusy",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Light Brown"
-      }
-    },
-    {
-      "id": "fenugreek-seeds",
-      "name": "Fenugreek Seeds",
-      "category": "Whole Spices",
-      "origin": "Rajasthan, India",
-      "description": "Bitter-sweet fenugreek seeds with a distinctive maple-like aroma. Essential for authentic Indian curries and known for their health benefits.",
-      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Seeds",
-        "taste": "Bitter-Sweet",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Yellow-Brown"
-      }
-    },
-    {
-      "id": "mustard-seeds",
-      "name": "Mustard Seeds",
-      "category": "Whole Spices",
-      "origin": "Punjab, India",
-      "description": "Sharp and pungent mustard seeds that add a distinctive flavor to Indian cooking. Available in both black and yellow varieties.",
-      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Seeds",
-        "variety": "Black & Yellow",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Black/Yellow"
-      }
-    },
-    {
-      "id": "cloves",
-      "name": "Cloves",
-      "category": "Whole Spices",
-      "origin": "Kerala, India",
-      "description": "Intensely aromatic cloves with a warm, sweet, and slightly bitter flavor. Perfect for both sweet and savory dishes.",
-      "image": "https://images.unsplash.com/photo-1609501676725-7186f3a0f0b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Buds",
-        "aroma": "Intense",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Dark Brown"
-      }
-    },
-    {
-      "id": "bay-leaves",
-      "name": "Bay Leaves",
-      "category": "Whole Spices",
-      "origin": "Kashmir, India",
-      "description": "Fragrant bay leaves that add depth and complexity to soups, stews, and curries. Known for their distinctive herbal aroma.",
-      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Leaves",
-        "aroma": "Herbal",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Green"
-      }
-    },
-    {
-      "id": "star-anise",
-      "name": "Star Anise",
-      "category": "Whole Spices",
-      "origin": "Assam, India",
-      "description": "Star-shaped spice with a licorice-like flavor. Essential for Chinese and Indian cuisine, adding a sweet and aromatic note.",
-      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Stars",
-        "flavor": "Licorice-like",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Brown"
-      }
-    },
-    {
-      "id": "curry-powder",
-      "name": "Curry Powder",
-      "category": "Spice Blends",
-      "origin": "Multiple Regions",
-      "description": "Aromatic blend of spices that forms the base of many Indian dishes. Our curry powder delivers authentic flavors and vibrant colors.",
-      "image": "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Ground Blend",
-        "ingredients": "10-15 Spices",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Golden Yellow"
-      }
-    },
-    {
-      "id": "paprika",
-      "name": "Paprika Powder",
-      "category": "Ground Spices",
-      "origin": "Kashmir, India",
-      "description": "Sweet and mild paprika powder that adds vibrant color and subtle flavor to dishes. Perfect for garnishing and seasoning.",
-      "image": "https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Fine Powder",
-        "heatLevel": "Mild",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Deep Red"
-      }
-    },
-    {
-      "id": "nutmeg",
-      "name": "Nutmeg",
-      "category": "Whole Spices",
-      "origin": "Kerala, India",
-      "description": "Warm and sweet nutmeg with a distinctive aroma. Used in both sweet and savory dishes, adding depth and complexity.",
-      "image": "https://images.unsplash.com/photo-1609501676725-7186f3a0f0b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Nuts",
-        "flavor": "Warm & Sweet",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Brown"
-      }
-    },
-    {
-      "id": "mace",
-      "name": "Mace",
-      "category": "Whole Spices",
-      "origin": "Kerala, India",
-      "description": "Delicate and aromatic mace, the outer covering of nutmeg. Adds a subtle, warm flavor to both sweet and savory dishes.",
-      "image": "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80",
-      "specifications": {
-        "form": "Whole Blades",
-        "flavor": "Delicate",
-        "packaging": "25kg / 50kg Bags",
-        "color": "Orange-Red"
-      }
-    }
-  ],
   "services": [
     {
       "id": "sourcing",
@@ -307,6 +67,96 @@
       "rating": 5,
       "image": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80",
       "date": "5 months ago"
+    },
+    {
+      "id": 4,
+      "name": "Marcus Johnson",
+      "title": "Executive Chef",
+      "company": "Golden Palace Hotel",
+      "content": "SD Overseas has transformed our kitchen operations with their consistent quality and excellent logistics. The spices arrive fresh and aromatic every time.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
+      "date": "1 month ago"
+    },
+    {
+      "id": 5,
+      "name": "Emily Chen",
+      "title": "Import Manager",
+      "company": "Global Food Distributors",
+      "content": "Working with SD Overseas has significantly improved our supply chain efficiency. Their documentation and customs clearance support is exceptional.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1534528741775-53994a69daeb",
+      "date": "4 months ago"
+    },
+    {
+      "id": 6,
+      "name": "Ahmed Hassan",
+      "title": "Restaurant Owner",
+      "company": "Middle Eastern Delights",
+      "content": "The authenticity and freshness of spices from SD Overseas is unmatched. Our customers always compliment the rich flavors in our dishes.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      "date": "6 months ago"
+    },
+    {
+      "id": 7,
+      "name": "Sarah Williams",
+      "title": "Quality Manager",
+      "company": "Premium Spice Co.",
+      "content": "SD Overseas' rigorous quality control ensures we receive only the finest spices. Their testing and certification process gives us complete confidence.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1544005313-94ddf0286df2",
+      "date": "3 months ago"
+    },
+    {
+      "id": 8,
+      "name": "David Kim",
+      "title": "Purchasing Director",
+      "company": "Asian Fusion Group",
+      "content": "The variety and quality of spices from SD Overseas has helped us expand our menu offerings. Their sourcing network across India is impressive.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1507591064344-4c6ce005b128",
+      "date": "2 months ago"
+    },
+    {
+      "id": 9,
+      "name": "Lisa Rodriguez",
+      "title": "Operations Manager",
+      "company": "Spice World Inc.",
+      "content": "SD Overseas' packaging and shipping solutions are top-notch. Our spices arrive in perfect condition, maintaining their potency and aroma.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1487412720507-e7ab37603c6f",
+      "date": "5 months ago"
+    },
+    {
+      "id": 10,
+      "name": "Michael Thompson",
+      "title": "CEO",
+      "company": "Gourmet Foods Ltd.",
+      "content": "Partnering with SD Overseas has been a game-changer for our business. Their expertise in spice trading and global logistics is unmatched.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1560250097-0b93528c311a",
+      "date": "7 months ago"
+    },
+    {
+      "id": 11,
+      "name": "Jennifer Lee",
+      "title": "Head of Procurement",
+      "company": "International Cuisine Corp",
+      "content": "SD Overseas' commitment to sustainable sourcing and fair trade practices aligns perfectly with our company values. Highly recommended!",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb",
+      "date": "4 months ago"
+    },
+    {
+      "id": 12,
+      "name": "Robert Wilson",
+      "title": "Restaurant Chain Owner",
+      "company": "Flavor Masters",
+      "content": "With 15 locations, we need reliable suppliers. SD Overseas consistently delivers on time with exceptional quality. They're our go-to spice partner.",
+      "rating": 5,
+      "image": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      "date": "1 month ago"
     }
   ]
 }
