@@ -31,12 +31,6 @@ const AnimatedTestimonials: React.FC<AnimatedTestimonialsProps> = ({
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center max-w-[540px] mx-auto text-center mb-12"
         >
-          <div className="flex justify-center mb-4">
-            <div className="border border-primary/30 py-1 px-4 rounded-lg bg-primary/5 dark:bg-primary/10 text-primary text-sm font-medium">
-              Testimonials
-            </div>
-          </div>
-
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-text-light dark:text-text-dark mb-4">
             {title}
           </h2>
