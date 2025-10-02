@@ -7,11 +7,11 @@ import engProductsConfig from './eng/products.json';
 import productDetailConfig from './eng/product-detail.json';
 import servicesConfig from './eng/services.json';
 import contactConfig from './eng/contact.json';
-import dataConfig from './data.json';
-import productsConfig from './products.json';
-import searchConfig from './search.json';
-import themeConfig from './theme.json';
-import globalPresenceConfig from './global-presence.json';
+import dataConfig from './glob/data.json';
+import productsConfig from './glob/products.json';
+import searchConfig from './glob/search.json';
+import themeConfig from './glob/theme.json';
+import globalPresenceConfig from './glob/global-presence.json';
 
 // Type definitions for configuration
 export interface GlobalConfig {

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useSearch, SearchResult } from '../../hooks/useSearch';
 import { Icon } from './Icon';
+import { getProducts } from '../../config';
 
 interface SearchDropdownProps {
   query: string;
@@ -185,29 +186,17 @@ export const SearchDropdown: React.FC<SearchDropdownProps> = ({
   );
 };
 
-// Helper function to get product image
+// Helper function to get product image from products.json
 const getProductImage = (productId: string): string => {
-  const productImages: Record<string, string> = {
-    'turmeric': 'https://images.unsplash.com/photo-1615485500834-bc10199bc727?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'cumin': 'https://plus.unsplash.com/premium_photo-1723874683717-006f24c93975?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'chilli': 'https://images.unsplash.com/photo-1607672632458-9eb56696346b?q=80&w=1257&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'cardamom': 'https://images.unsplash.com/photo-1642255521852-7e7c742ac58f?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'cinnamon': 'https://images.unsplash.com/photo-1587411767714-d355c1f847ea?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'garam-masala': 'https://images.unsplash.com/photo-1603122612817-2fe0e0631a93?ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
-    'black-pepper': 'https://images.unsplash.com/photo-1649952052743-5e8f37c348c5',
-    'coriander-powder': 'https://images.unsplash.com/photo-1608797179072-4268dd68eff2',
-    'fenugreek-seeds': 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'mustard-seeds': 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'cloves': 'https://images.unsplash.com/photo-1609501676725-7186f3a0f0b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'bay-leaves': 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'star-anise': 'https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'curry-powder': 'https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'paprika': 'https://images.unsplash.com/photo-1560472355-536de3962603?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'nutmeg': 'https://images.unsplash.com/photo-1609501676725-7186f3a0f0b3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-    'mace': 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80',
-  };
+  const products = getProducts();
+  const product = products.find(p => p.id === productId);
   
-  return productImages[productId] || 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80';
+  if (product && product.image) {
+    return product.image;
+  }
+  
+  // Fallback image if product not found or no image
+  return 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136';
 };
 
 // Helper function to get service icon

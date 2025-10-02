@@ -92,10 +92,24 @@
       "description": "Small, oval-shaped seeds with a strong, pungent taste similar to thyme. Essential for digestive health and commonly used in Indian cooking for their medicinal properties.",
       "image": "https://spicenest.in/cdn/shop/files/AjwainSeeds.png?v=1750749404",
       "specifications": {
-        "form": "Whole Seeds",
+        "type": "Whole Seeds",
         "flavor": "Pungent & Thyme-like",
         "packaging": "25kg / 50kg Bags",
         "color": "Brown"
+      }
+    },
+    {
+      "id": "mustard-seeds",
+      "name": "Mustard Seeds (Rai)",
+      "category": "Whole Spices",
+      "origin": "Haryana, India",
+      "description": "Premium yellow and black mustard seeds with a sharp, pungent flavor and aromatic pop when tempered. Essential for authentic Indian cooking, particularly in tempering and pickling processes.",
+      "image": "https://images.unsplash.com/photo-1586201375761-83865001e31c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "specifications": {
+        "form": "Whole Seeds",
+        "varieties": "Yellow & Black",
+        "packaging": "25kg / 50kg Bags",
+        "color": "Yellow & Black"
       }
     },
     {
@@ -190,7 +204,7 @@
       "description": "The world's most expensive spice, our premium saffron from Kashmir is known for its intense aroma, vibrant color, and unique flavor. Hand-picked and carefully processed to maintain its quality.",
       "image": "https://images.unsplash.com/photo-1643471672168-f4a4b6cfa440",
       "specifications": {
-        "form": "Whole Threads",
+        "type": "Whole Threads",
         "quality": "Premium Grade",
         "packaging": "1kg / 5kg / 10kg",
         "color": "Deep Red-Orange"

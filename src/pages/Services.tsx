@@ -12,6 +12,7 @@ import {
 import { scrollToTop } from '../hooks/useScrollToTop';
 import { useLanguage } from '../contexts/LanguageContext';
 import { SERVICES_DATA } from '../constants';
+import { resolveImagePath } from '../utils/imageUtils';
 
 export const Services: React.FC = () => {
   const { t } = useLanguage();
@@ -59,7 +60,7 @@ export const Services: React.FC = () => {
             <div className="relative flex items-center justify-center">
               <div className="w-full max-w-lg">
                 <img
-                  src={t('services.hero.image')}
+                  src={resolveImagePath(t('services.hero.image'))}
                   alt={t('services.hero.imageAlt')}
                   className="w-full h-auto object-contain rounded-xl shadow-lg bg-white/5 dark:bg-white/5 p-4 border border-primary/10"
                 />

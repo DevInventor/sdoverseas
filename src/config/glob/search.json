@@ -1,0 +1,115 @@
+{
+  "searchConfig": {
+    "minQueryLength": 2,
+    "maxResults": 10,
+    "fuzzyThreshold": 0.6,
+    "exactMatchBonus": 1.0,
+    "categoryMatchBonus": 0.3
+  },
+  "searchAliases": {
+    "cumin": {
+      "terms": ["cumin seeds", "jeera", "जीरा", "cumin", "white cumin", "roasted cumin", "cumin powder", "ground cumin", "whole cumin", "सफेद जीरा"],
+      "productId": "cumin"
+    },
+    "fennel-seeds": {
+      "terms": ["fennel seeds", "saunf", "सौंफ", "fennel", "sweet fennel", "madhura saunf", "मधुर सौंफ", "anis seed"],
+      "productId": "fennel-seeds"
+    },
+    "coriander-seeds": {
+      "terms": ["coriander seeds", "dhaniya seeds", "धनिया बीज", "coriander", "cilantro seeds", "dhania seeds", "हरा धनिया बीज"],
+      "productId": "coriander-seeds"
+    },
+    "fenugreek-seeds": {
+      "terms": ["fenugreek seeds", "methi seeds", "मेथी के बीज", "methi", "मेथी", "fenugreek", "methi dal"],
+      "productId": "fenugreek-seeds"
+    },
+    "dill-seeds": {
+      "terms": ["dill seeds", "soya seeds", "सोया बीज", "dill", "soya", "तोते की चिड़ियों के बीज", "pickling spice"],
+      "productId": "dill-seeds"
+    },
+    "kalonji-seeds": {
+      "terms": ["kalonji seeds", "nigella seeds", "कलौंजी", "black cumin seeds", "काला जीरा", "upakunch", "उपाकुंची बीज"],
+      "productId": "kalonji-seeds"
+    },
+    "ajwain-seeds": {
+      "terms": ["ajwain seeds", "carom seeds", "अजवाइन बीज", "ajwain", "अजवाइन", "thymol seeds", "bishop weed"],
+      "productId": "ajwain-seeds"
+    },
+    "chilli": {
+      "terms": ["red chilli", "chili", "chili powder", "red chili", "lal mirch", "लाल मिर्च", "chilli powder", "red chilli powder", "guntur chilli", "hot peppers"],
+      "productId": "chilli"
+    },
+    "turmeric": {
+      "terms": ["turmeric powder", "haldi", "हल्दी", "turmeric", "yellow spice", "turmeric root", "curcumin powder", "haldi powder"],
+      "productId": "turmeric"
+    },
+    "nutmeg": {
+      "terms": ["nutmeg powder", "jaiphal", "जायफल", "nutmeg", "nutmeg spice", "jaiphal powder", "myristica seeds"],
+      "productId": "nutmeg"
+    },
+    "cardamom": {
+      "terms": ["green cardamom", "cardamom pods", "elaichi", "इलायची", "choti elaichi", "green elaichi", "malabar cardamom", "honey pot"],
+      "productId": "cardamom"
+    },
+    "cinnamon": {
+      "terms": ["cinnamon sticks", "dalchini", "दालचीनी", "cinnamon bark", "cassia bark", "malabar cinnamon", "soft cinnamon"],
+      "productId": "cinnamon"
+    },
+    "black-pepper": {
+      "terms": ["black pepper", "peppercorns", "kali mirch", "काली मिर्च", "black peppercorns", "malabar pepper", "king of spices"],
+      "productId": "black-pepper"
+    },
+    "saffron": {
+      "terms": ["saffron", "kesar", "केसर", "saffron threads", "korean saffron", "expensive spice", "golden spice"],
+      "productId": "saffron"
+    },
+    "mustard-seeds": {
+      "terms": ["mustard seeds", "rai", "सरसों", "मस्टर्ड", "yellow mustard", "black mustard", "mustard", "rai dal"],
+      "productId": "mustard-seeds"
+    },
+    "sourcing": {
+      "terms": ["global sourcing", "export", "procurement", "supply chain", "sourcing services"],
+      "serviceId": "sourcing"
+    },
+    "logistics": {
+      "terms": ["shipping", "delivery", "transport", "freight", "logistics services"],
+      "serviceId": "logistics"
+    },
+    "quality": {
+      "terms": ["quality control", "assurance", "testing", "inspection", "quality services"],
+      "serviceId": "quality"
+    },
+    "customs": {
+      "terms": ["customs clearance", "documentation", "import export", "customs services", "clearance"],
+      "serviceId": "customs"
+    },
+    "packaging": {
+      "terms": ["custom packaging", "packaging services", "packaging solutions", "packaging"],
+      "serviceId": "packaging"
+    },
+    "support": {
+      "terms": ["customer support", "help", "assistance", "support services", "customer service", "help desk", "24/7 support", "dedicated support", "expert support", "trade support", "logistics support", "24x7 support", "support team", "contact support", "get help", "need help", "support staff"],
+      "serviceId": "support"
+    },
+    "help": {
+      "terms": ["help", "support", "assistance", "customer service", "get help", "need help", "help desk", "support team", "contact support", "24/7 support"],
+      "serviceId": "support"
+    },
+    "assistance": {
+      "terms": ["assistance", "help", "support", "customer service", "trade assistance", "business help", "expert assistance", "logistics help"],
+      "serviceId": "support"
+    },
+    "customer-service": {
+      "terms": ["customer service", "support", "help", "client service", "customer care", "service desk"],
+      "serviceId": "support"
+    }
+  },
+  "quickRedirects": {
+    "products": "/products",
+    "spices": "/products",
+    "services": "/services",
+    "about": "/about",
+    "contact": "/contact",
+    "home": "/"
+  }
+}

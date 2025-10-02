@@ -5,6 +5,7 @@ import { Icon, ProductCard } from '../components/common';
 import AnimatedTestimonials from '../components/ui/AnimatedTestimonials';
 import Preloader from '../components/ui/Preloader';
 import { getTestimonials, getProducts } from '../config';
+import { resolveImagePath } from '../utils/imageUtils';
 
 export const HomeFinal: React.FC = () => {
   const { t } = useLanguage();
@@ -34,7 +35,7 @@ export const HomeFinal: React.FC = () => {
       <section 
         className="relative h-[600px] flex items-center justify-center text-center text-white bg-gradient-to-br from-primary/90 to-primary"
         style={{
-          backgroundImage: `url("${t('home-final.hero.backgroundImage')}")`,
+          backgroundImage: `url("${resolveImagePath(t('home-final.hero.backgroundImage'))}")`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

@@ -97,13 +97,37 @@ const hasPartialMatch = (query: string, text: string): boolean => {
 
 /**
  * Check if query matches any term in alias terms (partial matching)
+ * More strict matching to prevent false positives
  */
 const hasAliasPartialMatch = (query: string, aliasTerms: string[]): boolean => {
   const normalizedQuery = normalizeQuery(query);
   
   return aliasTerms.some(term => {
     const normalizedTerm = normalizeQuery(term);
-    return normalizedTerm.includes(normalizedQuery) || normalizedQuery.includes(normalizedTerm);
+    
+    // Check exact word match first (most reliable)
+    const queryWords = normalizedQuery.split(' ');
+    const termWords = normalizedTerm.split(' ');
+    
+    const hasExactWordMatch = queryWords.some(queryWord => 
+      termWords.some(termWord => 
+        termWord === queryWord && queryWord.length >= 3 // Only match words of 3+ chars
+      )
+    );
+    
+    if (hasExactWordMatch) return true;
+    
+    // Check if query is contained in term (when query is meaningful length)
+    if (normalizedQuery.length >= 3 && normalizedTerm.includes(normalizedQuery)) {
+      return true;
+    }
+    
+    // Check if term is contained in query (when term is meaningful length)
+    if (normalizedTerm.length >= 3 && normalizedQuery.includes(normalizedTerm)) {
+      return true;
+    }
+    
+    return false;
   });
 };
 
@@ -273,15 +297,26 @@ export const useSearch = (config: Partial<SearchConfig> = {}) => {
       for (const searchTerm of uniqueSearchTerms) {
         // Exact name match (highest priority)
         if (normalizeQuery(service.title) === searchTerm) {
-          relevanceScore += 10.0; // Very high score for exact name match
+          relevanceScore += 15.0; // Very high score for exact name match
           hasAnyMatch = true;
         }
 
-        // Exact alias match for this specific service
+        // Exact alias match for this specific service (boost this priority)
         const aliasConfig = searchAliases[searchTerm];
         if (typeof aliasConfig === 'object' && 'serviceId' in aliasConfig && aliasConfig.serviceId === service.id) {
-          relevanceScore += 8.0; // High score for exact alias match
+          relevanceScore += 12.0; // Higher score for exact alias match
           hasAnyMatch = true;
+        }
+
+        // Check if query matches any alias terms directly
+        if (typeof aliasConfig === 'object' && 'terms' in aliasConfig && aliasConfig.serviceId === service.id) {
+          const hasDirectTermMatch = aliasConfig.terms.some(term => 
+            normalizeQuery(term) === normalizeQuery(query)
+          );
+          if (hasDirectTermMatch) {
+            relevanceScore += 9.0; // High score for direct term match
+            hasAnyMatch = true;
+          }
         }
 
         // Name similarity (fuzzy match)

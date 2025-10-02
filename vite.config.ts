@@ -5,7 +5,7 @@ import { fileURLToPath, URL } from 'url'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/sdoverseas/', // GitHub Pages base path
+  base: process.env.NODE_ENV === 'production' ? '/sdoverseas/' : '/', // Conditional base path
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

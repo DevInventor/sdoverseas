@@ -53,7 +53,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   
   const heroClasses = [
     'relative flex w-full flex-col',
-    `bg-[url('${backgroundImage}')]`,
     'bg-no-repeat bg-cover bg-center',
     'px-4 py-16 text-white md:px-6 lg:px-8',
     overlayClass,
@@ -67,7 +66,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
     : 'mx-auto flex w-full max-w-5xl flex-col items-start gap-6';
 
   return (
-    <section className={heroClasses}>
+    <section 
+      className={heroClasses}
+      style={{
+        backgroundImage: `url('${backgroundImage}')`
+      }}
+    >
       <div className={`${containerClasses} relative z-10`}>
         <div className={`flex-1 ${variant === 'split' ? 'lg:mr-12' : ''}`}>
           <h1 className="text-4xl font-extrabold leading-tight tracking-tighter md:text-5xl lg:text-6xl">
