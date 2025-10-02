@@ -49,6 +49,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         const homeConfig = await import(`../config/${langFolder}/home-final.json`);
         const aboutConfig = await import(`../config/${langFolder}/about.json`);
         const productsConfig = await import(`../config/${langFolder}/products.json`);
+        const productPageConfig = await import(`../config/${langFolder}/product-page.json`);
         const servicesConfig = await import(`../config/${langFolder}/services.json`);
         const contactConfig = await import(`../config/${langFolder}/contact.json`);
         const productDetailConfig = await import(`../config/${langFolder}/product-detail.json`);
@@ -58,7 +59,8 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
           global: globalConfig.default,
           'home-final': homeConfig.default,
           about: aboutConfig.default,
-          products: productsConfig.default,
+          products: productPageConfig.default, // Page structure -> products
+          'products-data': productsConfig.default, // Product data -> products-data
           services: servicesConfig.default,
           contact: contactConfig.default,
           'product-detail': productDetailConfig.default,

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getProducts } from '../config';
 import { Button, ProductCard } from '../components/common';
 import { Input, Textarea } from '../components/forms';
 import { PageContainer } from '../components/layout/PageContainer';
@@ -10,10 +9,14 @@ import { useLanguage } from '../contexts/LanguageContext';
 export const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();
   const { t } = useLanguage();
-  const products = getProducts();
+  
+  // Get language-specific products with error handling
+  const products = Array.isArray(t('products-data.products')) 
+    ? t('products-data.products') as any[]
+    : [];
   
   // Find the product by ID
-  const product = products.find(p => p.id === id);
+  const product = products.find((p: any) => p.id === id);
   
   // Form state
   const [formData, setFormData] = useState({
@@ -109,7 +112,7 @@ export const ProductDetail: React.FC = () => {
                     <span className="text-text-light/60 dark:text-text-dark/60 capitalize">
                       {key.replace(/([A-Z])/g, ' $1').trim()}
                     </span>
-                    <span className="text-text-light dark:text-text-dark font-medium">{value}</span>
+                    <span className="text-text-light dark:text-text-dark font-medium">{String(value || '')}</span>
                   </div>
                 ))}
               </div>
@@ -216,9 +219,9 @@ export const ProductDetail: React.FC = () => {
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {products
-              .filter(relatedProduct => relatedProduct.id !== product.id)
+              .filter((relatedProduct: any) => relatedProduct.id !== product.id)
               .slice(0, 3)
-              .map((relatedProduct) => (
+              .map((relatedProduct: any) => (
                 <ProductCard
                   key={relatedProduct.id}
                   product={relatedProduct}

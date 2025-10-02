@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getProducts, getServices, getSearchConfig } from '../config';
+import { getServices, getSearchConfig } from '../config';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export interface SearchResult {
   type: 'product' | 'service';
@@ -136,6 +137,7 @@ const hasAliasPartialMatch = (query: string, aliasTerms: string[]): boolean => {
  */
 export const useSearch = (config: Partial<SearchConfig> = {}) => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
   const [isSearching, setIsSearching] = useState(false);
   const searchConfig = { ...defaultSearchConfig, ...config };
   const searchAliases = getSearchConfig().searchAliases;
@@ -208,9 +210,11 @@ export const useSearch = (config: Partial<SearchConfig> = {}) => {
     // Remove duplicates
     const uniqueSearchTerms = [...new Set(searchTerms)];
 
-    // Search products
-    const products = getProducts();
-    products.forEach(product => {
+    // Search products (language-specific)
+    const products = Array.isArray(t('products-data.products')) 
+    ? t('products-data.products') as any[]
+    : [];
+    products.forEach((product: any) => {
       let relevanceScore = 0;
       let hasAnyMatch = false;
 

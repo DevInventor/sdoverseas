@@ -2,26 +2,18 @@ import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Icon, ProductCard } from '../components/common';
-import AnimatedTestimonials from '../components/ui/AnimatedTestimonials';
 import Preloader from '../components/ui/Preloader';
-import { getTestimonials, getProducts } from '../config';
 import { resolveImagePath } from '../utils/imageUtils';
 
 export const HomeFinal: React.FC = () => {
   const { t } = useLanguage();
   const [showPreloader, setShowPreloader] = useState(true);
   
-  // Get testimonials data and transform for animated component
-  const testimonialsData = getTestimonials().map(testimonial => ({
-    text: testimonial.content,
-    image: testimonial.image,
-    name: testimonial.name,
-    role: testimonial.title,
-    company: testimonial.company
-  }));
-
-  // Get featured products data
-  const featuredProducts = getProducts().slice(0, 3);
+  // Get featured products data (language-specific) with error handling
+  const allProducts = Array.isArray(t('products-data.products')) 
+    ? t('products-data.products') as any[]
+    : [];
+  const featuredProducts = allProducts.slice(0, 3);
 
   const handlePreloaderComplete = useCallback(() => {
     setShowPreloader(false);
@@ -126,7 +118,7 @@ export const HomeFinal: React.FC = () => {
             {t('home-final.sections.featuredProducts.subtitle')}
           </p>
           <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product) => (
+            {featuredProducts.map((product: any) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -144,13 +136,6 @@ export const HomeFinal: React.FC = () => {
           </div>
         </section>
 
-        {/* Animated Testimonials Section */}
-        <AnimatedTestimonials 
-          testimonials={testimonialsData}
-          title={t('home-final.sections.testimonials.title')}
-          subtitle={t('home-final.sections.testimonials.subtitle')}
-          className="mt-24"
-        />
       </div>
     </div>
     </>

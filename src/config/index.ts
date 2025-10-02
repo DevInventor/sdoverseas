@@ -201,6 +201,14 @@ export const getThemeConfig = (): ThemeConfig => themeConfig as ThemeConfig;
 
 // Helper functions for specific data
 export const getProducts = () => productsConfig.products;
+
+// Language-aware product getter
+export const getLanguageProducts = () => {
+  // This will be dynamic based on the current language context
+  // Products are now loaded through LanguageContext
+  return [];
+};
+
 export const getServices = () => getDataConfig().services;
 export const getTestimonials = () => getDataConfig().testimonials;
 export const getCompanyInfo = () => getGlobalConfig().company;

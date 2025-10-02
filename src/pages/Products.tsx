@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { PageContainer } from '../components/layout/PageContainer';
 import { 
   Card, 
@@ -8,8 +9,8 @@ import {
   ResponsiveGrid,
   ProductCard
 } from '../components/common';
-import { SPICE_PRODUCTS } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
+import { scrollToTop } from '../hooks/useScrollToTop';
 
 export const Products: React.FC = () => {
   const { t } = useLanguage();
@@ -17,10 +18,15 @@ export const Products: React.FC = () => {
   const [displayedProducts, setDisplayedProducts] = useState(8); // Show 8 products initially
   const productsPerLoad = 8; // Load 8 more products each time
 
+  // Get language-specific products with error handling
+  const SPICE_PRODUCTS = Array.isArray(t('products-data.products')) 
+    ? t('products-data.products') as any[]
+    : [];
+  
   // Filter products by category
   const filteredProducts = selectedCategory === 'all' 
     ? SPICE_PRODUCTS 
-    : SPICE_PRODUCTS.filter(product => 
+    : SPICE_PRODUCTS.filter((product: any) => 
         product.category.toLowerCase().includes(selectedCategory.toLowerCase())
       );
 
@@ -85,7 +91,7 @@ export const Products: React.FC = () => {
         {/* Products Grid */}
         <section className="mb-12">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {displayedProductsList.map((product) => (
+            {displayedProductsList.map((product: any) => (
               <ProductCard
                 key={product.id}
                 product={product}
@@ -173,12 +179,16 @@ export const Products: React.FC = () => {
                 {t('products.cta.subtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button variant="primary" size="lg" href={t('products.cta.primaryButton.href')}>
-                  {t('products.cta.primaryButton.text')}
-                </Button>
-                <Button variant="outline" size="lg" href={t('products.cta.secondaryButton.href')}>
-                  {t('products.cta.secondaryButton.text')}
-                </Button>
+                <Link to={t('products.cta.primaryButton.href')} onClick={scrollToTop}>
+                  <Button variant="primary" size="lg">
+                    {t('products.cta.primaryButton.text')}
+                  </Button>
+                </Link>
+                <Link to={t('products.cta.secondaryButton.href')} onClick={scrollToTop}>
+                  <Button variant="outline" size="lg">
+                    {t('products.cta.secondaryButton.text')}
+                  </Button>
+                </Link>
               </div>
             </CardContent>
           </Card>

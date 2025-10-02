@@ -1,10 +1,9 @@
 // App-wide constants - Now using dynamic configuration
 import { 
   getGlobalConfig, 
-  getProducts, 
   getServices, 
-  getTestimonials,
-  getCompanyInfo
+  getTestimonials, 
+  getCompanyInfo 
 } from '../config';
 
 // Routes
@@ -32,7 +31,8 @@ export const NAVIGATION_ITEMS = getGlobalConfig().navigation.items;
 export const HOME_PAGE_THEMES = getGlobalConfig().themes;
 
 // Dynamic data from configuration
-export const SPICE_PRODUCTS = getProducts();
+// SPICE_PRODUCTS is now loaded dynamically via LanguageContext
+// export const SPICE_PRODUCTS = getProducts(); 
 export const SERVICES_DATA = getServices();
 export const TESTIMONIALS_DATA = getTestimonials();
 export const COMPANY_INFO = getCompanyInfo();

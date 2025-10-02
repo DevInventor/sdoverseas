@@ -9,9 +9,11 @@ import {
   Icon,
   FloatingActionButton
 } from '../components/common';
+import AnimatedTestimonials from '../components/ui/AnimatedTestimonials';
 import { scrollToTop } from '../hooks/useScrollToTop';
 import { useLanguage } from '../contexts/LanguageContext';
 import { SERVICES_DATA } from '../constants';
+import { getTestimonials } from '../config';
 import { resolveImagePath } from '../utils/imageUtils';
 
 export const Services: React.FC = () => {
@@ -19,6 +21,15 @@ export const Services: React.FC = () => {
 
   // Check if translations are loaded
   const isTranslationsLoaded = t('services.services.title') !== 'services.services.title';
+
+  // Get testimonials data and transform for animated component
+  const testimonialsData = getTestimonials().map(testimonial => ({
+    text: testimonial.content,
+    image: testimonial.image,
+    name: testimonial.name,
+    role: testimonial.title,
+    company: testimonial.company
+  }));
 
   if (!isTranslationsLoaded) {
     return (
@@ -168,57 +179,13 @@ export const Services: React.FC = () => {
         </section>
 
 
-        {/* Client Testimonials */}
-        <section className="py-16">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-text-light dark:text-text-dark mb-4">
-              {t('services.testimonials.title')}
-            </h2>
-            <p className="text-subtle-light dark:text-subtle-dark max-w-2xl mx-auto">
-              {t('services.testimonials.subtitle')}
-            </p>
-          </div>
-
-          <ResponsiveGrid 
-            columns={{ xs: 1, md: 2, lg: 3 }}
-            gap="lg"
-          >
-            {(t('services.testimonials.items') || []).map((testimonial: any, index: number) => (
-              <Card 
-                key={index} 
-                className={`p-6 ${
-                  index % 2 === 0 
-                    ? 'bg-primary/5 dark:bg-primary/10' 
-                    : 'bg-secondary/5 dark:bg-secondary/10'
-                }`}
-              >
-                <CardContent>
-                  <div className="flex items-center mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <Icon key={i} name="star" size="sm" color="warning" />
-                    ))}
-                  </div>
-                  <p className="text-subtle-light dark:text-subtle-dark mb-6 italic leading-relaxed">
-                    "{testimonial.comment}"
-                  </p>
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center">
-                      <Icon name="person" size="md" color="primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold text-text-light dark:text-text-dark">
-                        {testimonial.name}
-                      </h4>
-                      <p className="text-sm text-subtle-light dark:text-subtle-dark">
-                        {testimonial.company}
-                      </p>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </ResponsiveGrid>
-        </section>
+        {/* Animated Testimonials Section */}
+        <AnimatedTestimonials 
+          testimonials={testimonialsData}
+          title={t('home-final.sections.testimonials.title')}
+          subtitle={t('home-final.sections.testimonials.subtitle')}
+          className="py-16"
+        />
 
         {/* CTA Section */}
         <section className="py-16">

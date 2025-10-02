@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { PageContainer } from "../components/layout/PageContainer";
 import {
   Card,
@@ -10,6 +11,7 @@ import {
 import { SERVICES_DATA } from "../constants";
 import { useLanguage } from "../contexts/LanguageContext";
 import GlobalPresenceMap from "../components/ui/GlobalPresenceMap";
+import { scrollToTop } from "../hooks/useScrollToTop";
 
 export const About: React.FC = () => {
   const { t } = useLanguage();
@@ -246,26 +248,28 @@ export const About: React.FC = () => {
                   
                   {/* Action Buttons */}
                   <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center">
-                    <Button 
-                      variant="primary" 
-                      size="lg" 
-                      href={t('about.sections.cta.primaryButton.href')}
-                      className="w-full sm:w-auto px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                      icon={<Icon name="email" size="md" color="white" />}
-                      iconPosition="left"
-                    >
-                      {t('about.sections.cta.primaryButton.text')}
-                    </Button>
-                    <Button 
-                      variant="outline" 
-                      size="lg" 
-                      href={t('about.sections.cta.secondaryButton.href')}
-                      className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105"
-                      icon={<Icon name="inventory" size="md" color="primary" />}
-                      iconPosition="left"
-                    >
-                      {t('about.sections.cta.secondaryButton.text')}
-                    </Button>
+                    <Link to={t('about.sections.cta.primaryButton.href')} onClick={scrollToTop}>
+                      <Button 
+                        variant="primary" 
+                        size="lg" 
+                        className="w-full sm:w-auto px-8 py-4 text-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                        icon={<Icon name="email" size="md" color="white" />}
+                        iconPosition="left"
+                      >
+                        {t('about.sections.cta.primaryButton.text')}
+                      </Button>
+                    </Link>
+                    <Link to={t('about.sections.cta.secondaryButton.href')} onClick={scrollToTop}>
+                      <Button 
+                        variant="outline" 
+                        size="lg" 
+                        className="w-full sm:w-auto px-8 py-4 text-lg font-semibold border-2 hover:bg-primary hover:text-white transition-all duration-300 transform hover:scale-105"
+                        icon={<Icon name="inventory" size="md" color="primary" />}
+                        iconPosition="left"
+                      >
+                        {t('about.sections.cta.secondaryButton.text')}
+                      </Button>
+                    </Link>
                   </div>
                   
                   {/* Trust Indicators */}

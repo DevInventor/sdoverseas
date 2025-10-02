@@ -1,7 +1,13 @@
 {
   "welcomeMessages": {
-    "eng": ["स्वागत है", "આવકાર છે", "Willkommen", "ようこそ","Welcome"],
-    "ger": ["Welcome", "स्वागत है", "આવकાર છે", "ようこそ", "Willkommen"]
+    "eng": ["स्वादों में आपका स्वागत है",
+    "મસાલાના દુનિયામાં આવકાર છે",
+    "Herzlich willkommen in der Welt der Gewürze",
+    "スパイスの世界へようこそ",
+    "Welcome to the World of Spices",
+    "Global Flavors, Local Touch",
+    "Taste the World with Us"
+  ]
   },
   "branding": {
     "eng": {
