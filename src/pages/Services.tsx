@@ -19,6 +19,16 @@ import { resolveImagePath } from '../utils/imageUtils';
 export const Services: React.FC = () => {
   const { t } = useLanguage();
 
+  // Direct WhatsApp functionality
+  const handleDirectWhatsApp = () => {
+    const phoneNumber = t('contact.contactInfo.whatsapp.value');
+    // Remove any non-digit characters for WhatsApp URL
+    const cleanNumber = phoneNumber.replace(/\D/g, '');
+    const message = encodeURIComponent("Hello! I'm interested in your spice trading services. Please contact me for more information.");
+    const whatsappUrl = `https://wa.me/${cleanNumber}?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+  };
+
   // Check if translations are loaded
   const isTranslationsLoaded = t('services.services.title') !== 'services.services.title';
 
@@ -213,16 +223,13 @@ export const Services: React.FC = () => {
           </Card>
         </section>
 
-        {/* Floating Action Button for Contact */}
+        {/* Floating Action Button for Direct WhatsApp */}
         <FloatingActionButton
-          icon="phone"
-          onClick={() => {
-            scrollToTop();
-            window.location.href = `/contact?ref=services&action=call`;
-          }}
+          icon="chat"
+          onClick={handleDirectWhatsApp}
           variant="primary"
           size="lg"
-          label="Call Now"
+          label="WhatsApp Now"
         />
       </PageContainer>
     </div>
