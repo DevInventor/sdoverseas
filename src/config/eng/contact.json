@@ -4,6 +4,10 @@
     "subtitle": "We're here to help with any questions or inquiries. Reach out to us today!",
     "backgroundImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDhY0KXGaThTbNvxoFgnAx-Ki70XXUfOPrsr9pYtILZh60JdJ2h35aV85VnikRwyslnvfW_s77TkYhUiHo3EBL_J3HIdV_9VWWx365nFwLvafxh_rEHJQCJ2V_cknuPJSt4t_cu4RLv5hHk_2TkwebRA-dxhSFTXvHq4DFX_pdOcGtVvZ_XJ5etPp69faH8R33hre21TcCIPA2F0Ph6enJsAcJxJ5sk98KAx3u3dzlM7rfNDYyLLP6ENT-sIo6Nd3FG6yRXjkm2IQ"
   },
+  "topbar": {
+    "tagline": "Premium Spices Import & Export Worldwide",
+    "workingHours": "Mon–Sat 9:00 – 18:00"
+  },
   "form": {
     "title": "Send us a Message",
     "fields": {
@@ -25,17 +29,18 @@
       }
     },
     "submitText": "Send Message",
-    "whatsappText": "Chat on WhatsApp"
+    "whatsappText": "Chat on WhatsApp",
+    "defaultWhatsAppMessage": "Hello! I'm interested in your spice trading services. Please provide me with more information about your products and services. Thank you!"
   },
   "contactInfo": {
     "title": "Our Location",
     "address": {
       "title": "Address",
-      "value": "APMC, Unjha, Gujarat, India"
+      "value": "F/13, Swami Vivekanand Shoping Center, Unjha, Gujarat, India"
     },
     "email": {
       "title": "Email",
-      "value": "info@sdoverseas.com"  
+      "value": "info.sdoverseas@gmail.com"  
     },
     "phone": {
       "title": "Phone",

@@ -1,13 +1,11 @@
-import React, { useState, useCallback } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Icon, ProductCard } from '../components/common';
-import Preloader from '../components/ui/Preloader';
 import { resolveImagePath } from '../utils/imageUtils';
 
 export const HomeFinal: React.FC = () => {
   const { t } = useLanguage();
-  const [showPreloader, setShowPreloader] = useState(true);
   
   // Get featured products data (language-specific) with error handling
   const allProducts = Array.isArray(t('products-data.products')) 
@@ -15,13 +13,7 @@ export const HomeFinal: React.FC = () => {
     : [];
   const featuredProducts = allProducts.slice(0, 3);
 
-  const handlePreloaderComplete = useCallback(() => {
-    setShowPreloader(false);
-  }, []);
-
   return (
-    <>
-      {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}
     <div className="flex min-h-screen flex-col">
       {/* Hero Section */}
       <section 
@@ -138,6 +130,5 @@ export const HomeFinal: React.FC = () => {
 
       </div>
     </div>
-    </>
   );
 };

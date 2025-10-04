@@ -3,7 +3,6 @@ import { ThemeProvider } from './contexts/ThemeContext';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { MainLayout } from './components/layout/MainLayout';
 import { PageContainer } from './components/layout/PageContainer';
-import { PageTransitionLoader } from './components/ui/PageTransitionLoader';
 import { ROUTES } from './constants';
 import { useScrollToTop } from './hooks/useScrollToTop';
 
@@ -43,7 +42,6 @@ function AppContent() {
 
   return (
     <>
-      <PageTransitionLoader />
       <MainLayout>
         <Routes>
           {/* Main Pages */}

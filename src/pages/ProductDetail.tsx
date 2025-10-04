@@ -85,7 +85,8 @@ export const ProductDetail: React.FC = () => {
 
   // Generate WhatsApp message with form data and product info
   const generateProductQuoteMessage = () => {
-    const message = `Hello! I'm interested in getting a quote for ${product?.name}.
+    const baseMessage = t('contact.form.defaultWhatsAppMessage');
+    const message = `${baseMessage}
 
 **Quote Request Details:**
 Product: ${product?.name || 'N/A'}

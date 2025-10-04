@@ -77,7 +77,8 @@ export const Contact = () => {
 
   // Generate WhatsApp message with form data
   const generateWhatsAppMessage = () => {
-    const message = `Hello! I'm interested in your spice trading services.
+    const baseMessage = t('contact.form.defaultWhatsAppMessage');
+    const message = `${baseMessage}
 
 Name: ${formData.name || 'Not provided'}
 Email: ${formData.email || 'Not provided'}

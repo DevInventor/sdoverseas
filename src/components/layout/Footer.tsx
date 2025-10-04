@@ -25,7 +25,7 @@ export const Footer: React.FC = () => {
 
   // Generate WhatsApp message
   const generateWhatsAppMessage = () => {
-    const message = `Hello! I'm interested in your spice trading services. Please provide me with more information about your products and services. Thank you!`;
+    const message = t('contact.form.defaultWhatsAppMessage');
     return encodeURIComponent(message);
   };
 

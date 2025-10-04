@@ -4,6 +4,10 @@
     "subtitle": "Wir sind hier, um bei Fragen oder Anfragen zu helfen. Kontaktieren Sie uns noch heute!",
     "backgroundImage": "https://lh3.googleusercontent.com/aida-public/AB6AXuDhY0KXGaThTbNvxoFgnAx-Ki70XXUfOPrsr9pYtILZh60JdJ2h35aV85VnikRwyslnvfW_s77TkYhUiHo3EBL_J3HIdV_9VWWx365nFwLvafxh_rEHJQCJ2V_cknuPJSt4t_cu4RLv5hHk_2TkwebRA-dxhSFTXvHq4DFX_pdOcGtVvZ_XJ5etPp69faH8R33hre21TcCIPA2F0Ph6enJsAcJxJ5sk98KAx3u3dzlM7rfNDYyLLP6ENT-sIo6Nd3FG6yRXjkm2IQ"
   },
+  "topbar": {
+    "tagline": "Premium Gewürze Import & Export Weltweit",
+    "workingHours": "Mo–Sa 9:00 – 18:00"
+  },
   "form": {
     "title": "Senden Sie uns eine Nachricht",
     "fields": {
@@ -25,17 +29,18 @@
       }
     },
     "submitText": "Nachricht senden",
-    "whatsappText": "WhatsApp-Chat"
+    "whatsappText": "WhatsApp-Chat",
+    "defaultWhatsAppMessage": "Hallo! Ich interessiere mich für Ihre Gewürzhandelsdienstleistungen. Bitte geben Sie mir weitere Informationen über Ihre Produkte und Dienstleistungen. Vielen Dank!"
   },
   "contactInfo": {
     "title": "Unser Standort",
     "address": {
-      "title": "Adresse",
-      "value": "APMC, Unjha, Gujarat, Indien"
+      "title": "Address",
+      "value": "F/13, Swami Vivekanand Shoping Center, Unjha, Gujarat, India"
     },
     "email": {
-      "title": "E-Mail",
-      "value": "info@sdoverseas.com"
+      "title": "Email",
+      "value": "info.sdoverseas@gmail.com"  
     },
     "phone": {
       "title": "Telefon",

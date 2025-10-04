@@ -53,7 +53,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
         const servicesConfig = await import(`../config/${langFolder}/services.json`);
         const contactConfig = await import(`../config/${langFolder}/contact.json`);
         const productDetailConfig = await import(`../config/${langFolder}/product-detail.json`);
-        const preloaderConfig = await import(`../config/glob/preloader.json`);
+        const socialMediaConfig = await import(`../config/glob/social-media.json`);
         
         setTranslations({
           global: globalConfig.default,
@@ -64,7 +64,7 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) 
           services: servicesConfig.default,
           contact: contactConfig.default,
           'product-detail': productDetailConfig.default,
-          preloader: preloaderConfig.default,
+          'social-media': socialMediaConfig.default,
         });
       } catch (error) {
         console.error(`Failed to load translations for language: ${language}`, error);
