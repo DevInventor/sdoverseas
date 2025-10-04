@@ -15,25 +15,25 @@
       {
         "name": "Gewürze",
         "slug": "spices",
-        "image": "/src/assets/Product-category/Spices.jpg",
+        "image": "/assets/Product-category/Spices.jpg",
         "description": "Premium ganze und gemahlene Gewürze"
       },
       {
         "name": "Superfoods",
         "slug": "super-foods",
-        "image": "/src/assets/Product-category/Super-foods.jpg",
+        "image": "/assets/Product-category/Super-foods.jpg",
         "description": "Nahrhafte Superfoods und Nahrungsergänzungsmittel"
       },
       {
         "name": "Hülsenfrüchte & Linsen",
         "slug": "pulses-lentils",
-        "image": "/src/assets/Product-category/Pulses-Lentils.jpg",
+        "image": "/assets/Product-category/Pulses-Lentils.jpg",
         "description": "Hochwertige Hülsenfrüchte und Linsen"
       },
       {
         "name": "Agro-Produkte",
         "slug": "agro-products",
-        "image": "/src/assets/Product-category/agro-products.jpg",
+        "image": "/assets/Product-category/agro-products.jpg",
         "description": "Premium-Landwirtschaftsprodukte"
       }
     ]
