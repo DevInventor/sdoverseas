@@ -8,6 +8,36 @@
     "tagline": "Premium Gewürze Import & Export Weltweit",
     "workingHours": "Mo–Sa 9:00 – 18:00"
   },
+  "productCategories": {
+    "title": "Organische & Konventionelle Produktpalette",
+    "subtitle": "Entdecken Sie unsere Premium-Auswahl an authentischen Gewürzen und Zutaten",
+    "categories": [
+      {
+        "name": "Gewürze",
+        "slug": "spices",
+        "image": "/src/assets/Product-category/Spices.jpg",
+        "description": "Premium ganze und gemahlene Gewürze"
+      },
+      {
+        "name": "Superfoods",
+        "slug": "super-foods",
+        "image": "/src/assets/Product-category/Super-foods.jpg",
+        "description": "Nahrhafte Superfoods und Nahrungsergänzungsmittel"
+      },
+      {
+        "name": "Hülsenfrüchte & Linsen",
+        "slug": "pulses-lentils",
+        "image": "/src/assets/Product-category/Pulses-Lentils.jpg",
+        "description": "Hochwertige Hülsenfrüchte und Linsen"
+      },
+      {
+        "name": "Agro-Produkte",
+        "slug": "agro-products",
+        "image": "/src/assets/Product-category/agro-products.jpg",
+        "description": "Premium-Landwirtschaftsprodukte"
+      }
+    ]
+  },
   "form": {
     "title": "Senden Sie uns eine Nachricht",
     "fields": {

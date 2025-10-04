@@ -1,17 +1,22 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import { Icon, ProductCard } from '../components/common';
+import { Icon } from '../components/common';
 import { resolveImagePath } from '../utils/imageUtils';
 
 export const HomeFinal: React.FC = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
   
-  // Get featured products data (language-specific) with error handling
-  const allProducts = Array.isArray(t('products-data.products')) 
-    ? t('products-data.products') as any[]
+  // Get product categories data from config
+  const productCategories = Array.isArray(t('contact.productCategories.categories')) 
+    ? t('contact.productCategories.categories') as any[]
     : [];
-  const featuredProducts = allProducts.slice(0, 3);
+
+  // Handle category click navigation
+  const handleCategoryClick = (categorySlug: string) => {
+    navigate(`/products?category=${categorySlug}`);
+  };
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -101,30 +106,59 @@ export const HomeFinal: React.FC = () => {
           </div>
         </section>
 
-        {/* Featured Products Section */}
+        {/* Product Categories Section */}
         <section className="mt-24">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white text-center">
-            {t('home-final.sections.featuredProducts.title')}
-          </h2>
-          <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 text-center max-w-2xl mx-auto">
-            {t('home-final.sections.featuredProducts.subtitle')}
-          </p>
-          <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProducts.map((product: any) => (
-              <ProductCard
-                key={product.id}
-                product={product}
-                showLearnMore={true}
-              />
-            ))}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white">
+              {t('contact.productCategories.title')}
+            </h2>
+            <p className="mt-4 text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+              {t('contact.productCategories.subtitle')}
+            </p>
           </div>
-          <div className="text-center mt-12">
-            <Link
-              to={t('home-final.sections.featuredProducts.cta.href') || '/products'}
-              className="px-6 py-3 rounded-full bg-primary/20 dark:bg-primary/30 text-primary font-bold hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors"
-            >
-              {t('home-final.sections.featuredProducts.cta.text')}
-            </Link>
+          
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {productCategories.map((category: any) => (
+              <div
+                key={category.slug}
+                onClick={() => handleCategoryClick(category.slug)}
+                className="group cursor-pointer bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 overflow-hidden border border-gray-200 dark:border-gray-700"
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    handleCategoryClick(category.slug);
+                  }
+                }}
+                aria-label={`Browse ${category.name} products`}
+              >
+                {/* Category Image */}
+                <div className="relative aspect-square overflow-hidden">
+                  <img
+                    src={category.image}
+                    alt={category.name}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = 'https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3';
+                    }}
+                  />
+                  {/* Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                </div>
+                
+                {/* Category Info */}
+                <div className="p-6">
+                  <h3 className="text-xl font-bold text-slate-900 dark:text-white group-hover:text-primary transition-colors duration-200">
+                    {category.name}
+                  </h3>
+                  <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
+                    {category.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

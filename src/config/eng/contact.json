@@ -8,6 +8,36 @@
     "tagline": "Premium Spices Import & Export Worldwide",
     "workingHours": "Mon–Sat 9:00 – 18:00"
   },
+  "productCategories": {
+    "title": "Organic & Conventional Product Range",
+    "subtitle": "Discover our premium selection of authentic spices and ingredients",
+    "categories": [
+      {
+        "name": "Spices",
+        "slug": "spices",
+        "image": "/src/assets/Product-category/Spices.jpg",
+        "description": "Premium whole spices and ground spices"
+      },
+      {
+        "name": "Super Foods",
+        "slug": "super-foods",
+        "image": "/src/assets/Product-category/Super-foods.jpg",
+        "description": "Nutritious superfoods and health supplements"
+      },
+      {
+        "name": "Pulses & Lentils",
+        "slug": "pulses-lentils",
+        "image": "/src/assets/Product-category/Pulses-Lentils.jpg",
+        "description": "High-quality pulses and lentils"
+      },
+      {
+        "name": "Agro Products",
+        "slug": "agro-products",
+        "image": "/src/assets/Product-category/agro-products.jpg",
+        "description": "Premium agricultural products"
+      }
+    ]
+  },
   "form": {
     "title": "Send us a Message",
     "fields": {
